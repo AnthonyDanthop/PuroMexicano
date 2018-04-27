@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="PuroMexicano.FormsScreen.misPuntos"
+             BackgroundColor = "White"
+             Title = "Mis Puntos"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding = "20,20">
+                <Label BackgroundColor = "Gray" 
+                       HeightRequest = "0.5">
+                </Label>
+                <Label Text = "MIS PUNTOS"
+                       FontSize = "25"
+                       TextColor = "Fuchsia"
+                       HorizontalOptions = "Center"> 
+                </Label>
+                <Label BackgroundColor = "Gray" 
+                       HeightRequest = "0.5">
+                </Label>
+                <Grid x:Name="controlGrid" 
+                        RowSpacing="0" 
+                        ColumnSpacing="10"
+                        BackgroundColor = "Transparent">
+                    <Grid.RowDefinitions>
+                        
+                        <RowDefinition Height="80" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60" />
+                        <ColumnDefinition Width="85" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Image 
+                        Aspect = "Fill"
+                        Source = "coins.png"
+                        BackgroundColor = "Transparent"
+                        Grid.Row = "0"
+                        Grid.Column = "1">
+                    </Image>
+                    <Label x:Name = "lpuntos"
+                           Text = "250 puntos"
+                           TextColor = "Gray"
+                           VerticalOptions = "Center"
+                           FontSize = "16"
+                           Grid.Row = "0"
+                           Grid.Column = "2"
+                    ></Label>
+                </Grid>
+                 <Label BackgroundColor = "Gray" 
+                       HeightRequest = "0.5">
+                </Label>
+            </StackLayout>
+            <ScrollView x:Name = "ScrollPuntos">
+                
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

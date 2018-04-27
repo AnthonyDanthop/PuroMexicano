@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuroMexicano.FormsScreen.Promocion">
+    <ContentPage.Content>
+        <ScrollView Orientation = "Vertical">
+            <Grid VerticalOptions = "FillAndExpand">
+                <StackLayout Padding = "30"
+                             Spacing = "10"
+                             VerticalOptions = "Center">
+                    
+                    <Grid x:Name="controlGrid1" 
+                          RowSpacing="0" 
+                          ColumnSpacing="5" 
+                          VerticalOptions = "Start">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="*" />
+                            
+                    </Grid.ColumnDefinitions>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EE7426"
+                             Grid.Row = "0"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label x:Name = "lNombre"
+                           Text = ""
+                           Grid.Row = "0"
+                           Grid.Column = "1"
+                           FontSize="28" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EE7426"
+                             Grid.Row = "1"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label Text="Descripcion"
+                           FontSize="25" 
+                           YAlign = "Center"
+                           Grid.Row = "1"
+                           Grid.Column = "1"
+                           ></Label>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#15836B"
+                             Grid.Row = "2"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label x:Name = "lDescripcion"
+                           Text = ""
+                           FontSize="18" 
+                           Grid.Row = "2"
+                           Grid.Column = "1"
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <Label 
+                           Text = "RESTRICCIONES"
+                           FontSize="12" 
+                           Grid.Row = "3"
+                           Grid.Column = "1"
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <Label x:Name = "lRestricciones"
+                           Text = ""
+                           FontSize="15" 
+                           Grid.Row = "4"
+                           Grid.Column = "1"
+                           VerticalTextAlignment = "Center"
+                           
+                    ></Label>
+                    <Label 
+                           Text = "VIGENCIA"
+                           FontSize="12" 
+                           Grid.Row = "5"
+                           Grid.Column = "1"
+                           VerticalTextAlignment = "End"
+                           
+                    ></Label>
+                    <Label x:Name = "lFechaV"
+                           FontSize = "15"
+                                Grid.Row = "6"
+                                Grid.Column = "1"
+                                >
+                    </Label>
+                    <Button Text = "VALIDAR"
+                            BorderWidth = "1"
+                            Clicked = "onValidate"
+                            BorderColor = "Red"
+                            Grid.Row = "7"
+                            Grid.Column = "1"
+                    ></Button>
+                      
+                    </Grid>
+                    
+                </StackLayout>
+                <Grid x:Name="barr" 
+                      RowSpacing="0" 
+                      ColumnSpacing="0"
+                      VerticalOptions = "End"
+                      >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#DF1082"
+                             Grid.Row = "0"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#15836B"
+                             Grid.Row = "0"
+                             Grid.Column = "1"
+                    ></BoxView>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EBD50A"
+                             Grid.Row = "0"
+                             Grid.Column = "2"
+                    ></BoxView>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EE7426"
+                             Grid.Row = "0"
+                             Grid.Column = "3"
+                    ></BoxView>
+                </Grid>
+             </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

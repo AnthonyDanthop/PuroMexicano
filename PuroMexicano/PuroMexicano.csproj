@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1453EBE5-D2F7-4FBF-AE3C-56BFBBAAEBC8}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PuroMexicano</RootNamespace>
+    <AssemblyName>PuroMexicano</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App.xaml" />
+    <EmbeddedResource Include="MyPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\PuroMexicanoPage.xaml" />
+    <EmbeddedResource Include="FormsScreen\LogIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\registroUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\loginFB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\Master.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\Detail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\negociosCat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\mapa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\ConfigPerfil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\Negocio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\Promocion.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\validaPromo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\misPuntos.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\obtenerPuntos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MyPage.xaml.cs">
+      <DependentUpon>MyPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\PuroMexicanoPage.xaml.cs">
+      <DependentUpon>PuroMexicanoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\LogIn.xaml.cs">
+      <DependentUpon>LogIn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\SQL.cs" />
+    <Compile Include="Clases\globales.cs" />
+    <Compile Include="FormsScreen\registroUsuario.xaml.cs">
+      <DependentUpon>registroUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\loginFB.xaml.cs">
+      <DependentUpon>loginFB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\FacebookViewModel.cs" />
+    <Compile Include="FormsScreen\Menu.xaml.cs">
+      <DependentUpon>Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\Master.xaml.cs">
+      <DependentUpon>Master.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\Detail.xaml.cs">
+      <DependentUpon>Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\negociosCat.xaml.cs">
+      <DependentUpon>negociosCat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\mapa.xaml.cs">
+      <DependentUpon>mapa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\ConfigPerfil.xaml.cs">
+      <DependentUpon>ConfigPerfil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\Negocio.xaml.cs">
+      <DependentUpon>Negocio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\Promocion.xaml.cs">
+      <DependentUpon>Promocion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\validaPromo.xaml.cs">
+      <DependentUpon>validaPromo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\misPuntos.xaml.cs">
+      <DependentUpon>misPuntos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\obtenerPuntos.xaml.cs">
+      <DependentUpon>obtenerPuntos.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="CSS Art\Estilos.css" />
+    <None Include="docs\MySqlTransaction.xml" />
+    <None Include="docs\MySqlParameterCollection.xml" />
+    <None Include="docs\MySqlParameter.xml" />
+    <None Include="docs\MySqlHelper.xml" />
+    <None Include="docs\MySqlException.xml" />
+    <None Include="docs\MySqlDataReader.xml" />
+    <None Include="docs\MySqlDataAdapter.xml" />
+    <None Include="docs\MySqlConnectionStringBuilder.xml" />
+    <None Include="docs\MySqlConnection.xml" />
+    <None Include="docs\MySqlCommandBuilder.xml" />
+    <None Include="docs\MySqlCommand.xml" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FormsScreen\" />
+    <Folder Include="CSS Art\" />
+    <Folder Include="Clases\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ImageCircle.Forms.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.2.0.2\lib\netstandard1.0\ImageCircle.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.5.1.444934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.5.1.444934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.5.1.444934\lib\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="NodaTime">
+      <HintPath>..\packages\NodaTime.1.3.4\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+XamariniOS1\NodaTime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Plugin.Media.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Media.3.1.3\lib\netstandard1.0\Plugin.Media.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Media">
+      <HintPath>..\packages\Xam.Plugin.Media.3.1.3\lib\netstandard1.0\Plugin.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\packages\Plugin.Permissions.2.2.1\lib\netstandard1.0\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.2.2.1\lib\netstandard1.0\Plugin.Permissions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
+</Project>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="PuroMexicano.FormsScreen.ConfigPerfil"
+             xmlns:controls = "clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             BackgroundColor = "White">
+    <ContentPage.Content>
+        <ScrollView Orientation = "Vertical">
+            <Grid VerticalOptions = "FillAndExpand">
+                <StackLayout Padding = "30"
+                             Spacing = "10"
+                             VerticalOptions = "Center">
+                     <controls:CircleImage  x:Name="Img" Source="" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Start"/>
+                    <Grid x:Name="controlGrid1" 
+                          RowSpacing="0" 
+                          ColumnSpacing="5" 
+                          VerticalOptions = "Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="8" />
+                            
+                    </Grid.ColumnDefinitions>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EE7426"
+                             Grid.Row = "0"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label Text = "NOMBRE"
+                           Grid.Row = "0"
+                           Grid.Column = "1"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EE7426"
+                             Grid.Row = "1"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Entry x:Name = "eUsuario" 
+                           Placeholder = "Nombre de usuario"
+                           Text = ""
+                           Grid.Row = "1"
+                           Grid.Column = "1"
+                           ></Entry>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#15836B"
+                             Grid.Row = "2"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label Text = "EMAIL"
+                           FontSize="18" 
+                           Grid.Row = "2"
+                           Grid.Column = "1"
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#15836B"
+                             Grid.Row = "3"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Entry x:Name = "eEmail" 
+                           Placeholder = "Tu direccion de correo"
+                           Grid.Row = "3"
+                           Grid.Column = "1"
+
+                           ></Entry>
+                     <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EBD50A"
+                             Grid.Row = "4"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label Text = "EDAD"
+                           Grid.Row = "4"
+                           Grid.Column = "1"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EBD50A"
+                             Grid.Row = "5"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Entry Text="" 
+                           x:Name="eEdad" 
+                           TextColor="Gray" 
+                           Placeholder="Tu edad" 
+                           FontSize="18" 
+                           HorizontalTextAlignment="Start"
+                           Keyboard= "Numeric"
+                           Grid.Row = "5"
+                           Grid.Column = "1"
+                          TextChanged = "TextChanged"
+                    ></Entry>
+                    </Grid>
+                  <BoxView VerticalOptions = "CenterAndExpand"
+                           BackgroundColor = "Transparent"
+                           HeightRequest = "5"
+                ></BoxView>
+                <Label BackgroundColor = "Black" 
+                       HeightRequest = "0.5">
+                </Label>
+                <Label Text = "RECIBIR NOTIFICACIONES"
+                       FontSize = "13"
+                       TextColor = "Black"
+                       VerticalOptions = "Center" 
+                       HorizontalOptions = "Center" 
+                ></Label>
+
+
+                <Grid x:Name="gBotones" 
+                          RowSpacing="0" 
+                          ColumnSpacing="1" 
+                          VerticalOptions = "Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name = "bSi"
+                            Text = "SI" 
+                       BackgroundColor = "White"
+                       BorderColor = "Black"
+                       BorderWidth = ".5"
+                       TextColor = "Black"
+                       VerticalOptions = "Center" 
+                       HorizontalOptions = "End" 
+                       Grid.Row = "0"
+                       Grid.Column = "0"
+                       WidthRequest = "80" 
+                       Clicked = "OnButtonClicked"
+                       >
+                       </Button>
+                         <Button x:Name = "bNo"
+                       Text = "NO" 
+                       BackgroundColor = "White" 
+                       BorderColor = "Black"
+                       BorderWidth = ".5"
+                       TextColor = "Black"
+                       VerticalOptions = "Center" 
+                       HorizontalOptions = "Start" 
+                       Grid.Row = "0"
+                       Grid.Column = "1"
+                       WidthRequest = "80"
+                       Clicked = "OnButtonClicked">
+                       </Button>
+                   </Grid>
+                    <Label BackgroundColor = "Black" 
+                           HeightRequest = "0.5">
+                </Label>
+                <Button x:Name = "bGuardar"
+                       Text = "Guardar" 
+                       BackgroundColor = "White" 
+                       BorderColor = "Black"
+                       BorderWidth = ".5"
+                       TextColor = "Black"
+                       VerticalOptions = "Center" 
+                       HorizontalOptions = "Center" 
+                       WidthRequest = "220" 
+                       Clicked = "Save">
+                       </Button>
+                </StackLayout>
+                <Grid x:Name="barr" 
+                      RowSpacing="0" 
+                      ColumnSpacing="0"
+                      VerticalOptions = "End"
+                      >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#DF1082"
+                             Grid.Row = "0"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#15836B"
+                             Grid.Row = "0"
+                             Grid.Column = "1"
+                    ></BoxView>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EBD50A"
+                             Grid.Row = "0"
+                             Grid.Column = "2"
+                    ></BoxView>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EE7426"
+                             Grid.Row = "0"
+                             Grid.Column = "3"
+                    ></BoxView>
+                </Grid>
+             </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

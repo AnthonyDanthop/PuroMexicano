@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:PuroMexicano" 
+             x:Class="PuroMexicano.PuroMexicanoPage"
+             BackgroundColor = "White"
+             >
+    <Grid VerticalOptions = "FillAndExpand">
+    <StackLayout Spacing="5" 
+                 x:Name="layout_Log"
+                 VerticalOptions = "Center" 
+    >
+       
+        <Image 
+               Source = "puromex.png"
+                HeightRequest = "140"
+               ></Image>
+       <Button 
+               Text = "" 
+               BackgroundColor = "Transparent" 
+               TextColor = "White"
+               VerticalOptions = "Center" 
+               HorizontalOptions = "Center" 
+               WidthRequest = "200" 
+               HeightRequest = "40"
+                Image ="btn_iniciar.png"
+                ContentLayout = "Left,0"
+               Clicked = "LogIn"   
+        />
+        <Button Text = "" 
+               BackgroundColor = "Transparent" 
+               TextColor = "Gray"
+               VerticalOptions = "Center" 
+               HorizontalOptions = "Center" 
+               WidthRequest = "200" 
+               HeightRequest = "40"
+                Image ="btn_Registrarse.png"
+                ContentLayout = "Left,0"
+               Clicked = "Register"
+        />
+         <Grid x:Name="controlGrid1" 
+              RowSpacing="0" 
+              ColumnSpacing="0" VerticalOptions = "Center">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="40" />
+            </Grid.ColumnDefinitions>
+                <Label BackgroundColor = "Black" 
+                       HeightRequest = "0.5"
+                       Grid.Row = "1"
+                       Grid.Column = "1"
+                />
+        </Grid>
+
+         <Button x:Name = "bFaceBook"
+                 Text = ""
+                BackgroundColor = "Transparent" 
+                VerticalOptions = "Center" 
+                HorizontalOptions = "Center" 
+                WidthRequest = "320"
+                HeightRequest = "40"
+                Clicked = "RegisterFaceBook"
+                Image ="btn_facebook.png"
+                ContentLayout = "Left,0"
+          />
+
+        <Grid x:Name="controlGrid" 
+              RowSpacing="0" 
+              ColumnSpacing="0"
+
+              >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+             <Label Text = "Continuar " 
+                   BackgroundColor = "Transparent" 
+                   TextColor = "Black"
+                   VerticalOptions = "Center" 
+                   HorizontalOptions = "End" 
+                     Grid.Row = "0"
+                     Grid.Column = "0"
+            />
+            <Label Text = "sin registrarme" 
+                   BackgroundColor = "Transparent" 
+                   TextColor = "Purple"
+                   VerticalOptions = "Center" 
+                   HorizontalOptions = "Start" 
+                     Grid.Row = "0"
+                     Grid.Column = "1"
+            />
+            <Button Text = "->" 
+                    BackgroundColor = "Red" 
+                    TextColor = "Black"
+                    Grid.Row = "0"
+                    Grid.Column = "2"
+                    VerticalOptions = "Center" 
+                    HorizontalOptions = "Start" 
+                    />
+        </Grid>
+        </StackLayout>
+        
+        <Grid x:Name="barr" 
+              RowSpacing="0" 
+              ColumnSpacing="0"
+              VerticalOptions = "End"
+              >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <BoxView VerticalOptions = "CenterAndExpand"
+                     BackgroundColor = "#DF1082"
+                     Grid.Row = "0"
+                     Grid.Column = "0"
+            ></BoxView>
+            <BoxView VerticalOptions = "CenterAndExpand"
+                     BackgroundColor = "#15836B"
+                     Grid.Row = "0"
+                     Grid.Column = "1"
+            ></BoxView>
+            <BoxView VerticalOptions = "CenterAndExpand"
+                     BackgroundColor = "#EBD50A"
+                     Grid.Row = "0"
+                     Grid.Column = "2"
+            ></BoxView>
+            <BoxView VerticalOptions = "CenterAndExpand"
+                     BackgroundColor = "#EE7426"
+                     Grid.Row = "0"
+                     Grid.Column = "3"
+            ></BoxView>
+        </Grid>
+     
+     </Grid>
+</ContentPage>

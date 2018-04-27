@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls = "clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="PuroMexicano.FormsScreen.Master"
+             Title = "Master"
+             Icon = "icon_master.png">
+    <ContentPage.Content>
+        <StackLayout Spacing = "0">
+               <Grid x:Name="menuLateral" 
+                      RowSpacing="0" 
+                      ColumnSpacing="0"
+                     Padding = "20,15"
+                      VerticalOptions = "Start"
+                      >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition Width="180" />
+                        <ColumnDefinition Width="80" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#DF1082"
+                             Grid.Row = "0"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label Text = "MENÚ" 
+                           Font = "25"
+                           HorizontalOptions = "Center"
+                           VerticalOptions = "Center"
+                           Grid.Row = "0"
+                           Grid.Column = "1"
+                    ></Label>
+                    <controls:CircleImage 
+                        x:Name = "iFoto"
+                        VerticalOptions = "CenterAndExpand"
+                        Grid.Row = "0"
+                        Grid.Column = "2"
+                        Source = "puromex.png"
+                    ></controls:CircleImage>
+                </Grid>
+                <StackLayout Spacing = "0">
+                     <Label 
+                        x:Name = "lCorreo"
+                        Text = "correo@gdominio.com" 
+                        Font = "12"
+                        Margin = "25,0"
+                        HorizontalOptions = "Start"
+                        VerticalOptions = "Start"
+                        TextColor = "#DF1082"
+                        HeightRequest = "30"
+                        ></Label>
+                    <Button Text = "MIS PUNTOS" 
+                           BackgroundColor = "White" 
+                           BorderColor = "Black"
+                           BorderWidth = ".5"
+                           TextColor = "Black" 
+                           HorizontalOptions = "Fill"
+                           HeightRequest = "40"
+                           Clicked = "misPuntos_Click"
+                            >
+                           </Button>
+                    <Button Text = "OBTENER PUNTOS" 
+                           BackgroundColor = "Gray" 
+                           BorderColor = "Purple"
+                           BorderWidth = ".5"
+                           TextColor = "Black" 
+                           HorizontalOptions = "Fill" 
+                           HeightRequest = "40" 
+                            Clicked = "obtenerPuntos_Click">
+                           </Button>
+                    <Button Text = "FAVORITOS" 
+                           BackgroundColor = "Gray" 
+                           BorderColor = "Purple"
+                           BorderWidth = ".5"
+                           TextColor = "Black" 
+                           HorizontalOptions = "Fill" 
+                           HeightRequest = "40">
+                        </Button>
+                    <Button Text = "MI NEGOCIO EN PURO MEXICANO" 
+                           BackgroundColor = "Gray" 
+                           BorderColor = "Purple"
+                           BorderWidth = ".5"
+                           TextColor = "Black" 
+                           HorizontalOptions = "Fill" 
+                           HeightRequest = "40">
+                           </Button>
+                    <Button Text = "TUTORIAL" 
+                           BackgroundColor = "Gray" 
+                           BorderColor = "Purple"
+                           BorderWidth = ".5"
+                           TextColor = "Black" 
+                           HorizontalOptions = "Fill" 
+                           HeightRequest = "40">
+                           </Button>
+                    </StackLayout>
+                    <StackLayout Spacing = "0" VerticalOptions = "EndAndExpand">
+                        <Button Text = "CONFIGURACION" 
+                               BackgroundColor = "Purple" 
+                               BorderColor = "Fuchsia"
+                               BorderWidth = ".5"
+                               TextColor = "Black" 
+                               VerticalOptions = "End"
+                               HorizontalOptions = "FillAndExpand" 
+                               HeightRequest = "40" 
+                                Clicked = "configPerfil"
+                                >
+                               </Button>
+                        <Button Text = "CERRAR SESION" 
+                               BackgroundColor = "Purple" 
+                               BorderColor = "Fuchsia"
+                               BorderWidth = ".5"
+                               TextColor = "Black" 
+                               VerticalOptions = "End"
+                               HorizontalOptions = "FillAndExpand" 
+                               HeightRequest = "40" >
+                               </Button>
+                    </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

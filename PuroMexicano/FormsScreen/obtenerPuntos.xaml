@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="PuroMexicano.FormsScreen.obtenerPuntos"
+             BackgroundColor = "White">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding = "25,25">
+                 <Label BackgroundColor = "Gray" 
+                           HeightRequest = "0.5">
+                </Label>
+                <StackLayout Padding = "60,10">
+                    <Label Text = "REGISTRA LOS DATOS DE TU COMPRA PARA OBTENER PUNTOS"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                           HorizontalOptions = "Center"
+                           HorizontalTextAlignment = "Center"
+                           TextColor = "Purple"
+                           >
+                    </Label>
+                </StackLayout>
+                 <Label BackgroundColor = "Gray" 
+                           HeightRequest = "0.5">
+                </Label>
+               <Grid x:Name="controlGrid1" 
+                       RowSpacing="0" 
+                          Padding = "0,0"
+                          ColumnSpacing="5" 
+                          VerticalOptions = "Start"
+                          >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="8" />
+                            
+                    </Grid.ColumnDefinitions>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EE7426"
+                             Grid.Row = "0"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label Text = "TICKET"
+                           TextColor = "Gray"
+                           Grid.Row = "0"
+                           Grid.Column = "1"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EE7426"
+                             Grid.Row = "1"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Entry x:Name = "eTicket" 
+                           Placeholder = "Número de ticket"
+                           TextColor = "Gray"
+                           Grid.Row = "1"
+                           Grid.Column = "1"
+                           ></Entry>
+                     <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EBD50A"
+                             Grid.Row = "2"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label Text = "MONTO"
+                           Grid.Row = "2"
+                           Grid.Column = "1"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EBD50A"
+                             Grid.Row = "3"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Entry Text= ""
+                             Keyboard= "Numeric"
+                           x:Name="eMonto" 
+                           TextColor="Gray" 
+                           Placeholder="Total de tu compra" 
+                           PlaceholderColor="Gray" 
+                           IsPassword="True" 
+                           FontSize="18" 
+                           HorizontalTextAlignment="Start"
+
+                           Grid.Row = "3"
+                           Grid.Column = "1"
+                    ></Entry>
+                    </Grid>
+                 <Label BackgroundColor = "Gray" HeightRequest = "0.5"> </Label>
+                 <Button Text = "seleccionar negocio" TextColor = "White" BackgroundColor = "Red"></Button>
+                <Label BackgroundColor = "Gray" HeightRequest = "0.5"> </Label>
+                 <Label Text = "FOTO DEL TICKET"
+                           FontSize="15" 
+                           VerticalTextAlignment = "Center"
+                           HorizontalOptions = "Center"
+                           HorizontalTextAlignment = "Center"
+                           TextColor = "Black"
+                           >
+                    </Label>
+                <Label BackgroundColor = "Gray" HeightRequest = "0.5"> </Label>
+                <Button Text = "DESDE GALERIA" TextColor = "White" BackgroundColor = "Red" Clicked = "Elegir_Imagen"></Button>
+                <Button Text = "abrir camara" TextColor = "White" BackgroundColor = "Red" Clicked = "HacerFoto"></Button>
+                <Image x:Name ="miImagen" BackgroundColor = "Green" HeightRequest = "180"> </Image>
+                <Button Text = "Enviar" TextColor = "White" BackgroundColor = "Red" ></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

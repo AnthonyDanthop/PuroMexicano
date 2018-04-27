@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuroMexicano.FormsScreen.validaPromo">
+    <ContentPage.Content>
+         <ScrollView  Padding = "10,10" Orientation = "Vertical" >
+             <StackLayout VerticalOptions = "Start">
+            <Grid RowSpacing = "5" VerticalOptions = "Start">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                </Grid.RowDefinitions>
+               <AbsoluteLayout Grid.Row="0"  HorizontalOptions="Center">
+                    <Image Source="codigo_promo.png" 
+                           Aspect="Fill" 
+                           WidthRequest = "270"
+                           HeightRequest = "200"></Image>
+                    <Label x:Name = "lCodigo" 
+                           Text="" 
+                           FontSize = "35"
+                           TextColor="#7B757D" 
+                           BackgroundColor="Transparent" 
+                           HorizontalOptions="Center"                         
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.5,0.3,-1,-1">
+                    </Label>
+                    <Label 
+                           Text="CODIGO" 
+                           FontSize = "20"
+                           TextColor="White" 
+                           BackgroundColor="Transparent" 
+                           HorizontalOptions="Center"                         
+                           AbsoluteLayout.LayoutFlags="PositionProportional"
+                           AbsoluteLayout.LayoutBounds="0.5,0.85,-1,-1">
+                    </Label>
+                </AbsoluteLayout>
+                <Grid Grid.Row = "1" VerticalOptions = "Start" Padding = "10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#D044E9"
+                             Grid.Row = "1"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label Text = "CALIFICAR NEGOCIO"
+                           Grid.Row = "1"
+                           Grid.Column = "1"
+                           FontSize = "25"
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                </Grid>
+                <Grid Grid.Row = "2" VerticalOptions = "Start"  RowSpacing = "0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Image Source="limpieza.png" Aspect="Fill" ></Image>
+                        <Grid Padding = "180,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name= "Star01" 
+                                ClassId = "01"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "0"
+                                Clicked = "setCalif"
+                                ></Button>
+                            <Button x:Name= "Star02" 
+                                    ClassId = "02"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "1"
+                                Clicked = "setCalif"
+                                ></Button>
+                             <Button x:Name= "Star03" 
+                                     ClassId = "03"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "2"
+                                Clicked = "setCalif"
+                                ></Button>
+                            <Button x:Name= "Star04" 
+                                    ClassId = "04"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "3"
+                                Clicked = "setCalif"
+                                ></Button>
+                             <Button x:Name= "Star05" 
+                                     ClassId = "05"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "4"
+                                Clicked = "setCalif"
+                                ></Button>
+                        </Grid>
+                </Grid>
+                <Grid Grid.Row = "3" VerticalOptions = "Start"  RowSpacing = "0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Image Source="bar_star.png" Aspect="Fill" ></Image>
+                        <Grid Padding = "180,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name= "Star11" 
+                                ClassId = "11"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "0"
+                                Clicked = "setCalif"
+                                ></Button>
+                            <Button x:Name= "Star12" 
+                                    ClassId = "12"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "1"
+                                Clicked = "setCalif"
+                                ></Button>
+                             <Button x:Name= "Star13" 
+                                     ClassId = "13"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "2"
+                                Clicked = "setCalif"
+                                ></Button>
+                            <Button x:Name= "Star14" 
+                                    ClassId = "14"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "3"
+                                Clicked = "setCalif"
+                                ></Button>
+                             <Button x:Name= "Star15" 
+                                     ClassId = "15"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "4"
+                                Clicked = "setCalif"
+                                ></Button>
+                        </Grid>
+                </Grid>
+                 <Grid Grid.Row = "4" VerticalOptions = "Start"  RowSpacing = "0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Image Source="bar_star.png" Aspect="Fill" ></Image>
+                        <Grid Padding = "180,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name= "Star21" 
+                                ClassId = "21"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "0"
+                                Clicked = "setCalif"
+                                ></Button>
+                            <Button x:Name= "Star22" 
+                                    ClassId = "22"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "1"
+                                Clicked = "setCalif"
+                                ></Button>
+                             <Button x:Name= "Star23" 
+                                     ClassId = "23"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "2"
+                                Clicked = "setCalif"
+                                ></Button>
+                            <Button x:Name= "Star24" 
+                                    ClassId = "24"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "3"
+                                Clicked = "setCalif"
+                                ></Button>
+                             <Button x:Name= "Star25" 
+                                     ClassId = "25"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "4"
+                                Clicked = "setCalif"
+                                ></Button>
+                        </Grid>
+                </Grid>
+                 <Grid Grid.Row = "5" VerticalOptions = "Start"  RowSpacing = "0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Image Source="bar_star.png" Aspect="Fill" ></Image>
+                        <Grid Padding = "180,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name= "Star31" 
+                                ClassId = "31"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "0"
+                                Clicked = "setCalif"
+                                ></Button>
+                            <Button x:Name= "Star32" 
+                                    ClassId = "32"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "1"
+                                Clicked = "setCalif"
+                                ></Button>
+                             <Button x:Name= "Star33" 
+                                     ClassId = "33"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "2"
+                                Clicked = "setCalif"
+                                ></Button>
+                            <Button x:Name= "Star34" 
+                                    ClassId = "34"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "3"
+                                Clicked = "setCalif"
+                                ></Button>
+                             <Button x:Name= "Star35" 
+                                     ClassId = "35"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "4"
+                                Clicked = "setCalif"
+                                ></Button>
+                        </Grid>
+                </Grid>
+                 <Grid Grid.Row = "6" VerticalOptions = "Start"  RowSpacing = "0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                        <Image Source="bar_star.png" Aspect="Fill" ></Image>
+                        <Grid Padding = "180,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                                <ColumnDefinition Width = "26"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name= "Star41" 
+                                ClassId = "41"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "0"
+                                Clicked = "setCalif"
+                                ></Button>
+                            <Button x:Name= "Star42" 
+                                    ClassId = "42"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "1"
+                                Clicked = "setCalif"
+                                ></Button>
+                             <Button x:Name= "Star43" 
+                                     ClassId = "43"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "2"
+                                Clicked = "setCalif"
+                                ></Button>
+                            <Button x:Name= "Star44" 
+                                    ClassId = "44"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "3"
+                                Clicked = "setCalif"
+                                ></Button>
+                             <Button x:Name= "Star45" 
+                                     ClassId = "45"
+                                Text = ""
+                                Image = "star_on.png"
+                                BackgroundColor = "Transparent"
+                                ContentLayout = "Left,0"
+                                Grid.Row = "0"
+                                Grid.Column = "4"
+                                Clicked = "setCalif"
+                                ></Button>
+                        </Grid>
+                </Grid>
+
+           </Grid>
+            <StackLayout Padding = "44,30" VerticalOptions = "Center">
+                <Button Text = "ACEPTAR"
+                        BackgroundColor = "Purple"
+                        TextColor = "White"
+                        Clicked = "updateCalif">
+                        
+                    </Button>
+
+            </StackLayout>
+            <StackLayout>
+                    <Grid x:Name="barr" 
+                  RowSpacing="2" 
+                  ColumnSpacing="0"
+                  VerticalOptions = "End"
+                  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="5" />    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#DF1082"
+                         Grid.Row = "1"
+                         Grid.Column = "0"
+                ></BoxView>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#15836B"
+                         Grid.Row = "1"
+                         Grid.Column = "1"
+                ></BoxView>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#EBD50A"
+                         Grid.Row = "1"
+                         Grid.Column = "2"
+                ></BoxView>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#EE7426"
+                         Grid.Row = "1"
+                         Grid.Column = "3"
+                ></BoxView>
+                </Grid>
+               </StackLayout>
+                
+        </StackLayout>
+            
+         </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             x:Class="PuroMexicano.FormsScreen.Negocio">
+    <ContentPage.Content>
+       <ScrollView Orientation="Vertical">
+        <StackLayout VerticalOptions = "Start">
+            <StackLayout HeightRequest="200"
+                         Padding = "13,13"
+                         VerticalOptions = "Start"
+                         HorizontalOptions = "FillAndExpand">
+                <control:CarouselView x:Name="TutoCarousel">
+                   <control:CarouselView.ItemTemplate>
+                       <DataTemplate>
+                            <Image Source="{Binding .}"/>
+                       </DataTemplate>
+                   </control:CarouselView.ItemTemplate>
+                </control:CarouselView>
+            </StackLayout>
+                    <Label x:Name = "lNombre"
+                               Text = "negocio 1"
+                               WidthRequest = "100"
+                               HorizontalOptions = "Center"
+                               ></Label>
+                    <Grid x:Name = "gDetalleNegocio"
+                          VerticalOptions = "Center"
+                          HorizontalOptions = "Center"
+                          Padding = "130,0">
+                         <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                         </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name = "star1"
+                               Source = "star.png"
+                               Grid.Row = "0" 
+                               Grid.Column = "0"
+                        ></Image>
+                        <Image x:Name = "star2"
+                               Source = "star.png"
+                               Grid.Row = "0" 
+                               Grid.Column = "1"
+                        ></Image>
+                        <Image x:Name = "star3"
+                               Source = "star.png"
+                               Grid.Row = "0" 
+                               Grid.Column = "2"
+                        ></Image>
+                        <Image x:Name = "star4"
+                               Source = "star.png"
+                               Grid.Row = "0" 
+                               Grid.Column = "3"
+                        ></Image>
+                        <Image x:Name = "star5"
+                               Source = "star.png"
+                               Grid.Row = "0" 
+                               Grid.Column = "4"
+                        ></Image>
+                        
+                  </Grid>
+                <Grid x:Name="controlGrid1" 
+                          RowSpacing="0" 
+                          Padding = "15,0"
+                          ColumnSpacing="5" 
+                          VerticalOptions = "Start">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="8" />
+                            
+                    </Grid.ColumnDefinitions>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EE7426"
+                             Grid.Row = "0"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label Text = "DESCRIPCIÓN"
+                           Grid.Row = "0"
+                           Grid.Column = "1"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "#EE7426"
+                             Grid.Row = "1"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label x:Name = "lDesc" 
+                           Text="descripcion brebe y corta "
+                           VerticalOptions = "Start"
+                           Grid.Row = "1"
+                           Grid.Column = "1"
+                           ></Label>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "Purple"
+                             Grid.Row = "2"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label Text = "HORARIO"
+                           FontSize="18" 
+                           Grid.Row = "2"
+                           Grid.Column = "1"
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             BackgroundColor = "Purple"
+                             Grid.Row = "3"
+                             Grid.Column = "0"
+                    ></BoxView>
+                    <Label x:Name = "lHorario" 
+                           Text = "9:00 a 12:00 / 14:00 a 19:00"
+                           Grid.Row = "3"
+                           Grid.Column = "1"
+
+                           ></Label>
+                    </Grid>
+
+                <StackLayout Padding = "14,0">
+                    <Button Text = "ubicacion"></Button>
+                    <Button Text = "promociones"
+                            Clicked = "viewPromociones"
+                            ></Button>
+                </StackLayout>
+                <StackLayout>
+                    <Grid x:Name="barr" 
+                  RowSpacing="2" 
+                  ColumnSpacing="0"
+                  VerticalOptions = "End"
+                  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="5" />    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#DF1082"
+                         Grid.Row = "1"
+                         Grid.Column = "0"
+                ></BoxView>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#15836B"
+                         Grid.Row = "1"
+                         Grid.Column = "1"
+                ></BoxView>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#EBD50A"
+                         Grid.Row = "1"
+                         Grid.Column = "2"
+                ></BoxView>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#EE7426"
+                         Grid.Row = "1"
+                         Grid.Column = "3"
+                ></BoxView>
+                </Grid>
+               </StackLayout>
+                
+        </StackLayout>
+           
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

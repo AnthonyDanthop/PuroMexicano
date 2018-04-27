@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:viewModels="clr-namespace:PuroMexicano.Clases;assembly=PuroMexicano"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls = "clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="PuroMexicano.FormsScreen.loginFB"
+             BackgroundColor = "#95AFEE">
+   
+
+    <ContentPage.BindingContext>
+        <viewModels:FacebookViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <StackLayout x:Name="MainStackLayout" VerticalOptions="Center" HorizontalOptions="Center">
+            <controls:CircleImage  x:Name="Img" Source="{Binding FacebookProfile.Picture.Data.Url}" HeightRequest="200" WidthRequest="200" HorizontalOptions="Center" VerticalOptions="Start"/>
+                <StackLayout HorizontalOptions="Center">
+                    
+                    <Entry x:Name="nombre" Text="{Binding FacebookProfile.FirstName}" WidthRequest="300" HorizontalTextAlignment="Center"  FontSize="Large" IsEnabled="false" BackgroundColor="White" TextColor="Black"/>
+                    <Entry x:Name="apellido" Text="{Binding FacebookProfile.LastName}" WidthRequest="300" HorizontalTextAlignment="Center"  FontSize="Large" IsEnabled="false" BackgroundColor="White" TextColor="Black"/>
+                    <Label x:Name="ID" Text="{Binding FacebookProfile.Id}" Font="Bold" FontSize="22" IsVisible="false"/>
+                    <Label x:Name="email" Text="{Binding FacebookProfile.Email}" Font="Bold" FontSize="22" IsVisible="false"/>
+                    <Entry x:Name = "eEmail" 
+                           Placeholder = "Confirmar Correo"
+                           BackgroundColor="White" 
+                           TextColor="Gray"
+                           Text="{Binding User.Email, Mode=TwoWay}"
+                    ></Entry>
+                    <Button x:Name = "bAceptar"
+                            Text = "Aceptar"
+                            BackgroundColor = "White" 
+                            VerticalOptions = "Center" 
+                            HorizontalOptions = "Center" 
+                            WidthRequest = "100"
+                            HeightRequest = "40"
+                            Clicked = "aceptar"
+
+                            BorderWidth = "1"
+                     />
+                </StackLayout>       
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

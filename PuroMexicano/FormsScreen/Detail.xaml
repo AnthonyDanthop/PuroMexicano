@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="PuroMexicano.FormsScreen.Detail"
+    BackgroundColor = "White"
+   >
+    <ContentPage.Content>
+         <ScrollView>
+            <Grid 
+              Padding = "0,10"
+              RowSpacing="20" 
+              ColumnSpacing="3">
+                <Grid x:Name = "gMenu"
+                      VerticalOptions = "Center"
+                      HorizontalOptions = "Center">
+                     <Grid.RowDefinitions>
+                        <RowDefinition Height="170"/>
+                        <RowDefinition Height="170"/>
+                        <RowDefinition Height="170"/>
+                        <RowDefinition Height="170"/>
+                        <RowDefinition Height="170"/>
+                        
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170" />
+                        <ColumnDefinition Width="170" />
+                    </Grid.ColumnDefinitions>
+                   <Button 
+                       ClassId = "COMIDA"
+                       Text = "" 
+                       Image ="btn_Comida.png"
+                       BackgroundColor = "Transparent"
+                       VerticalOptions = "FillAndExpand" 
+                       HorizontalOptions = "FillAndExpand" 
+                       ContentLayout = "Left,0"
+                       Grid.Row = "0"
+                       Grid.Column = "0"
+                       Clicked = "OnButtonClicked"
+                    />
+                    <Button 
+                       ClassId = "BEBIDA"
+                       Image ="btn_BEBIDA.png"
+                       Text = "" 
+                       BackgroundColor = "Transparent" 
+                       TextColor = "Black"
+                       VerticalOptions = "FillAndExpand" 
+                       HorizontalOptions = "FillAndExpand" 
+                       ContentLayout = "Left,0"
+                       Grid.Row = "0"
+                       Grid.Column = "1"
+                       Clicked = "OnButtonClicked"
+                    />
+                    <Button 
+                       ClassId = "EDUCACION"
+                       Text = "" 
+                       BackgroundColor = "Transparent" 
+                       TextColor = "Black"
+                       VerticalOptions = "FillAndExpand" 
+                       HorizontalOptions = "FillAndExpand" 
+                       Image ="btn_EDUCACION.png"
+                       ContentLayout = "Left,0"
+                       Grid.Row = "1"
+                       Grid.Column = "0"
+                       Clicked = "OnButtonClicked"
+                    />
+                    <Button 
+                       ClassId = "VIAJES"
+                       Text = "" 
+                       BackgroundColor = "Transparent" 
+                       TextColor = "Black"
+                       VerticalOptions = "FillAndExpand" 
+                       HorizontalOptions = "FillAndExpand" 
+                       Image ="btn_VIAJES.png"
+                       ContentLayout = "Left,0"
+                       Grid.Row = "1"
+                       Grid.Column = "1"
+                       Clicked = "OnButtonClicked"
+                    />
+                    <Button 
+                       ClassId = "DIVERSION"
+                       Text = "" 
+                       BackgroundColor = "Transparent" 
+                       TextColor = "Black"
+                       VerticalOptions = "FillAndExpand" 
+                       HorizontalOptions = "FillAndExpand" 
+                       Image ="btn_DIVEVRSION.png"
+                       ContentLayout = "Left,0"
+                       Grid.Row = "2"
+                       Grid.Column = "0"
+                       Clicked = "OnButtonClicked"
+                    />
+                    <Button 
+                       ClassId = "HOGAR"
+                       Text = "" 
+                       BackgroundColor = "Transparent" 
+                       TextColor = "Black"
+                       VerticalOptions = "FillAndExpand" 
+                       HorizontalOptions = "FillAndExpand" 
+                       Image ="btn_HOGAR.png"
+                       ContentLayout = "Left,0"
+                       Grid.Row = "2"
+                       Grid.Column = "1"
+                       Clicked = "OnButtonClicked"
+                    />
+                    <Button 
+                       ClassId = "CUIDADO_PERSONAL"
+                       Text = "" 
+                       BackgroundColor = "Transparent" 
+                       TextColor = "Black"
+                       VerticalOptions = "FillAndExpand" 
+                       HorizontalOptions = "FillAndExpand" 
+                       Image ="btn_CUIDADO_PERSONAL.png"
+                       ContentLayout = "Left,0"
+                       Grid.Row = "3"
+                       Grid.Column = "0"
+                       Clicked = "OnButtonClicked"
+                    />
+                    <Button 
+                       ClassId = "FIESTA"
+                       Text = "" 
+                       BackgroundColor = "Transparent" 
+                       TextColor = "Black"
+                       VerticalOptions = "FillAndExpand" 
+                       HorizontalOptions = "FillAndExpand" 
+                       Image ="btn_FIESTA.png"
+                       ContentLayout = "Left,0"
+                       Grid.Row = "3"
+                       Grid.Column = "1"
+                       Clicked = "OnButtonClicked"
+                    />
+                    <Button 
+                       ClassId = "SERVICIOS"
+                       Text = "" 
+                       BackgroundColor = "Transparent" 
+                       TextColor = "Black"
+                       VerticalOptions = "FillAndExpand" 
+                       HorizontalOptions = "FillAndExpand" 
+                       Image ="btn_SERVICIOS.png"
+                       ContentLayout = "Left,0"
+                       Grid.Row = "4"
+                       Grid.Column = "0"
+                       Clicked = "OnButtonClicked"
+                    />
+                </Grid>
+                  <Grid x:Name="barr" 
+                  RowSpacing="2" 
+                  ColumnSpacing="0"
+                  VerticalOptions = "End"
+                  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="5" />    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#DF1082"
+                         Grid.Row = "1"
+                         Grid.Column = "0"
+                ></BoxView>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#15836B"
+                         Grid.Row = "1"
+                         Grid.Column = "1"
+                ></BoxView>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#EBD50A"
+                         Grid.Row = "1"
+                         Grid.Column = "2"
+                ></BoxView>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                         BackgroundColor = "#EE7426"
+                         Grid.Row = "1"
+                         Grid.Column = "3"
+                ></BoxView>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
