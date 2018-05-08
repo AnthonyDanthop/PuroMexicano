@@ -123,6 +123,23 @@
     <Reference Include="Plugin.Media">
       <HintPath>..\packages\Xam.Plugin.Media.3.1.3\lib\Xamarin.iOS10\Plugin.Media.dll</HintPath>
     </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\BTProgressHUD.1.2.0.6\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK-1.0" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Acr.Support.iOS">
+      <HintPath>..\packages\Acr.Support.2.1.0\lib\Xamarin.iOS10\Acr.Support.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\packages\Splat.2.0.0\lib\Xamarin.iOS10\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs">
+      <HintPath>..\packages\Acr.UserDialogs.6.5.0\lib\Xamarin.iOS10\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs.Interface">
+      <HintPath>..\packages\Acr.UserDialogs.6.5.0\lib\Xamarin.iOS10\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PuroMexicano\PuroMexicano.csproj">
@@ -173,6 +190,19 @@
     <BundleResource Include="Resources\star_on.png" />
     <BundleResource Include="Resources\limpieza.png" />
     <BundleResource Include="Resources\bar.png" />
+    <BundleResource Include="Resources\abrircamara.png" />
+    <BundleResource Include="Resources\desdegaleria.png" />
+    <BundleResource Include="Resources\barrabebida.png" />
+    <BundleResource Include="Resources\barracomida.png" />
+    <BundleResource Include="Resources\barracuidadopersonal.png" />
+    <BundleResource Include="Resources\barradiversion.png" />
+    <BundleResource Include="Resources\barraeducacion.png" />
+    <BundleResource Include="Resources\barrafiesta.png" />
+    <BundleResource Include="Resources\barrahogar.png" />
+    <BundleResource Include="Resources\barraservicios.png" />
+    <BundleResource Include="Resources\barraviajes.png" />
+    <BundleResource Include="Resources\flecha_derecha.png" />
+    <BundleResource Include="Resources\barra_inferior.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />

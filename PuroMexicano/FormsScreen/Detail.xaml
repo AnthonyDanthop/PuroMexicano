@@ -143,42 +143,11 @@
                        Clicked = "OnButtonClicked"
                     />
                 </Grid>
-                  <Grid x:Name="barr" 
-                  RowSpacing="2" 
-                  ColumnSpacing="0"
-                  VerticalOptions = "End"
-                  >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100" />
-                    <RowDefinition Height="5" />    
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#DF1082"
-                         Grid.Row = "1"
-                         Grid.Column = "0"
-                ></BoxView>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#15836B"
-                         Grid.Row = "1"
-                         Grid.Column = "1"
-                ></BoxView>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#EBD50A"
-                         Grid.Row = "1"
-                         Grid.Column = "2"
-                ></BoxView>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#EE7426"
-                         Grid.Row = "1"
-                         Grid.Column = "3"
-                ></BoxView>
-                </Grid>
+                  <Image Source = "barra_inferior"
+                   VerticalOptions = "EndAndExpand"
+                   Aspect = "Fill"
+                   Margin = "0,20">
+            </Image>
             </Grid>
         </ScrollView>
     </ContentPage.Content>

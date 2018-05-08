@@ -1,157 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuroMexicano.FormsScreen.LogIn" BackgroundColor = "White">
     <ContentPage.Content>
-       <Grid VerticalOptions = "FillAndExpand">
-        <StackLayout Padding = "30"
-                     Spacing = "10"
-                     VerticalOptions = "Center">
-            <Image 
-               Source = "puromex.png"
-               ></Image>
-            <Grid x:Name="controlGrid1" 
-              RowSpacing="0" 
-              ColumnSpacing="5" VerticalOptions = "Center">
-            
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="3" />
-                <ColumnDefinition Width="8" />
-            </Grid.ColumnDefinitions>
-            <BoxView VerticalOptions = "CenterAndExpand"
-                     BackgroundColor = "#EE7426"
-                     Grid.Row = "0"
-                     Grid.Column = "0"
-            ></BoxView>
-            <Label Text = "EMAIL"
-                   Grid.Row = "0"
-                   Grid.Column = "1"
-                   VerticalTextAlignment = "Center"
-            ></Label>
-            <BoxView VerticalOptions = "CenterAndExpand"
-                     BackgroundColor = "#EE7426"
-                     Grid.Row = "1"
-                     Grid.Column = "0"
-            ></BoxView>
-            <Entry x:Name = "eEmail" 
-                   Placeholder = "Tu direccion de correo"
-                   Text="{Binding User.Email, Mode=TwoWay}"
-                   Grid.Row = "1"
-                   Grid.Column = "1"
-                   ></Entry>
-             <BoxView VerticalOptions = "CenterAndExpand"
-                     BackgroundColor = "#EBD50A"
-                     Grid.Row = "2"
-                     Grid.Column = "0"
-            ></BoxView>
-            <Label Text = "CONTRASEÑA"
-                   Grid.Row = "2"
-                   Grid.Column = "1"
-                   VerticalTextAlignment = "Center"
-            ></Label>
-            <BoxView VerticalOptions = "CenterAndExpand"
-                     BackgroundColor = "#EBD50A"
-                     Grid.Row = "3"
-                     Grid.Column = "0"
-            ></BoxView>
-            <Entry Text="{Binding User.Password, Mode=TwoWay}" 
-                   x:Name="ePassword" 
-                   TextColor="Gray" 
-                   Placeholder="Tu contraseña" 
-                   PlaceholderColor="Gray" 
-                   IsPassword="True" 
-                   FontSize="18" 
-                   HorizontalTextAlignment="Start"
+        <StackLayout Spacing = "0">
+           <StackLayout Spacing = "0" VerticalOptions = "Center" Padding = "50">
+                <Image 
+                   Source = "puromex.png"
+                    Aspect = "AspectFit"
+                    Margin = "15,15"
+                   ></Image>
+                 <Grid x:Name="controlGrid1" 
+                       RowSpacing="0" 
+                       ColumnSpacing="5" 
+                       VerticalOptions = "Center">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height=".5*" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height=".3*" />
+                            <RowDefinition Height=".5*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="3" />
+                            <ColumnDefinition Width="8" />
+                        </Grid.ColumnDefinitions>
+                        <BoxView VerticalOptions = "FillAndExpand"
+                                 BackgroundColor = "#EE7426"
+                                 Grid.Row = "0"
+                                 Grid.Column = "0"
+                                 Grid.RowSpan = "2"
+                        ></BoxView>
+                        <Label Text = "EMAIL"
+                               FontSize = "18"
+                               Grid.Row = "0"
+                               Grid.Column = "1"
+                               VerticalTextAlignment = "Start"
+                        ></Label>
 
-                   Grid.Row = "3"
-                   Grid.Column = "1"/>
-            </Grid>
-             <BoxView VerticalOptions = "CenterAndExpand"
-                     BackgroundColor = "Transparent"
-                      HeightRequest = "5"
-            ></BoxView>
-            <Label BackgroundColor = "Black" 
-                       HeightRequest = "0.5">
-            </Label>
-            <Button Text = "INICIAR SESION" 
-               BackgroundColor = "#A369FF" 
-               TextColor = "White"
-               VerticalOptions = "Center" 
-               HorizontalOptions = "Center" 
-               WidthRequest = "200" 
-               Clicked="OnButtonClicked"
-        />
+                        <Entry x:Name = "eEmail" 
+                               Placeholder = "Tu direccion de correo"
+                               Text="{Binding User.Email, Mode=TwoWay}"
+                               Grid.Row = "1"
+                               Grid.Column = "1"
+                               FontSize = "14"
+                               ></Entry>
+                         <BoxView VerticalOptions = "FillAndExpand"
+                                 BackgroundColor = "#EBD50A"
+                                 Grid.Row = "3"
+                                 Grid.Column = "0"
+                                  Grid.RowSpan = "2"
+                        ></BoxView>
+                        <Label Text = "CONTRASEÑA"
+                               FontSize = "18"
+                               Grid.Row = "3"
+                               Grid.Column = "1"
+                               VerticalTextAlignment = "Start"
+                        ></Label>
 
-            <Grid x:Name="controlGrid" 
-              RowSpacing="0" 
-              ColumnSpacing="0"
-
-              >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-             <Label Text = "¿Olvidaste  " 
-                   TextColor = "Black"
-                   VerticalOptions = "Center" 
-                   HorizontalOptions = "End" 
-                     Grid.Row = "0"
-                     Grid.Column = "0"
-            />
-            <Label Text = "tu contraseña?" 
-                   TextColor = "Red"
-                   VerticalOptions = "Center" 
-                   HorizontalOptions = "Start" 
-                     Grid.Row = "0"
-                     Grid.Column = "1"
-            />
-          
-        </Grid>
+                        <Entry Text="{Binding User.Password, Mode=TwoWay}" 
+                               x:Name="ePassword" 
+                               TextColor="Gray" 
+                               Placeholder="Tu contraseña" 
+                               PlaceholderColor="Gray" 
+                               IsPassword="True" 
+                               FontSize="14" 
+                               HorizontalTextAlignment="Start"
+                               Grid.Row = "4"
+                               Grid.Column = "1"/>
+                        </Grid>
+                         <BoxView VerticalOptions = "CenterAndExpand"
+                                 BackgroundColor = "Transparent"
+                                  HeightRequest = "5"
+                        ></BoxView>
+                        <Label BackgroundColor = "Black" 
+                                   HeightRequest = "0.5"
+                               Margin = "0,25">
+                        </Label>                
+                        <Button Text = "INICIAR SESION" 
+                           BackgroundColor = "#962081" 
+                           TextColor = "White"
+                           VerticalOptions = "Center" 
+                           HorizontalOptions = "Center" 
+                           WidthRequest = "200" 
+                           Clicked="OnButtonClicked"/>
+                            
+                        <Grid x:Name="controlGrid" 
+                              RowSpacing="0" 
+                              ColumnSpacing="0" Padding = "0,15">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                 <Label Text = "¿Olvidaste  " 
+                                       TextColor = "Black"
+                                       VerticalOptions = "Center" 
+                                       HorizontalOptions = "End" 
+                                         Grid.Row = "0"
+                                         Grid.Column = "0"
+                                />
+                                <Label Text = "tu contraseña?" 
+                                       TextColor = "Red"
+                                       VerticalOptions = "Center" 
+                                       HorizontalOptions = "Start" 
+                                         Grid.Row = "0"
+                                         Grid.Column = "1"/>
+                        </Grid>
+                </StackLayout>
+            <Image Source = "barra_inferior"
+                   VerticalOptions = "EndAndExpand"
+                   Aspect = "Fill">
+            </Image>
         </StackLayout>
-            <Grid x:Name="barr" 
-              RowSpacing="0" 
-              ColumnSpacing="0"
-              VerticalOptions = "End"
-              >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="5" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <BoxView VerticalOptions = "CenterAndExpand"
-                     BackgroundColor = "#DF1082"
-                     Grid.Row = "0"
-                     Grid.Column = "0"
-            ></BoxView>
-            <BoxView VerticalOptions = "CenterAndExpand"
-                     BackgroundColor = "#15836B"
-                     Grid.Row = "0"
-                     Grid.Column = "1"
-            ></BoxView>
-            <BoxView VerticalOptions = "CenterAndExpand"
-                     BackgroundColor = "#EBD50A"
-                     Grid.Row = "0"
-                     Grid.Column = "2"
-            ></BoxView>
-            <BoxView VerticalOptions = "CenterAndExpand"
-                     BackgroundColor = "#EE7426"
-                     Grid.Row = "0"
-                     Grid.Column = "3"
-            ></BoxView>
-        </Grid>
-      </Grid>
     </ContentPage.Content>
 </ContentPage>

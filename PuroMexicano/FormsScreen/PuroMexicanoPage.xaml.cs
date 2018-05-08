@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 using PuroMexicano.FormsScreen;
-
+using PuroMexicano.Clases;
 
 namespace PuroMexicano
 {
@@ -25,6 +25,11 @@ namespace PuroMexicano
         async void RegisterFaceBook(object sender, System.EventArgs e)
         {
             await Navigation.PushAsync(new loginFB());
+        }
+
+        async void sinRegistro(object sender, System.EventArgs e)
+        {
+            globales.ToastInfo("login sin perfil");
         }
     }
 }

@@ -9,6 +9,7 @@ using Android.Widget;
 using ImageCircle.Forms.Plugin.Droid;
 using Android.OS;
 using Plugin.Permissions;
+using Acr.UserDialogs;
 
 namespace PuroMexicano.Droid
 {
@@ -21,7 +22,7 @@ namespace PuroMexicano.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
+            UserDialogs.Init(this);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             ImageCircleRenderer.Init();
             LoadApplication(new App());

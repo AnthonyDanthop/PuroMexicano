@@ -8,9 +8,7 @@
     <Grid VerticalOptions = "FillAndExpand">
     <StackLayout Spacing="5" 
                  x:Name="layout_Log"
-                 VerticalOptions = "Center" 
-    >
-       
+                 VerticalOptions = "Center" >
         <Image 
                Source = "puromex.png"
                 HeightRequest = "140"
@@ -72,16 +70,16 @@
         <Grid x:Name="controlGrid" 
               RowSpacing="0" 
               ColumnSpacing="0"
-
+              HorizontalOptions = "Start"
+              Padding = "100,0"
               >
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
              <Label Text = "Continuar " 
                    BackgroundColor = "Transparent" 
@@ -98,14 +96,20 @@
                    HorizontalOptions = "Start" 
                      Grid.Row = "0"
                      Grid.Column = "1"
+                   
             />
-            <Button Text = "->" 
-                    BackgroundColor = "Red" 
+            <Button Text = "" 
+                    BackgroundColor = "Transparent" 
                     TextColor = "Black"
                     Grid.Row = "0"
                     Grid.Column = "2"
                     VerticalOptions = "Center" 
                     HorizontalOptions = "Start" 
+                    Image ="flecha_derecha.png"
+                    WidthRequest = "50"
+                    HeightRequest = "50"
+                    ContentLayout = "Left,0"
+                    Clicked = "sinRegistro"
                     />
         </Grid>
         </StackLayout>

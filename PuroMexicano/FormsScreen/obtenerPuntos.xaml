@@ -5,7 +5,7 @@
              BackgroundColor = "White">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding = "25,25">
+            <StackLayout Padding = "10,25">
                  <Label BackgroundColor = "Gray" 
                            HeightRequest = "0.5">
                 </Label>
@@ -106,8 +106,8 @@
                            >
                     </Label>
                 <Label BackgroundColor = "Gray" HeightRequest = "0.5"> </Label>
-                <Button Text = "DESDE GALERIA" TextColor = "White" BackgroundColor = "Red" Clicked = "Elegir_Imagen"></Button>
-                <Button Text = "abrir camara" TextColor = "White" BackgroundColor = "Red" Clicked = "HacerFoto"></Button>
+                <Button Image = "desdegaleria" Text = "" TextColor = "White" BackgroundColor = "Red" Clicked = "Elegir_Imagen" ContentLayout = "Left,0" HeightRequest = "40" ></Button>
+                <Button Image = "abrircamara" Text = "" TextColor = "White" BackgroundColor = "Red" Clicked = "HacerFoto" ContentLayout = "Left,0" HeightRequest = "40" ></Button>
                 <Image x:Name ="miImagen" BackgroundColor = "Green" HeightRequest = "180"> </Image>
                 <Button Text = "Enviar" TextColor = "White" BackgroundColor = "Red" ></Button>
             </StackLayout>

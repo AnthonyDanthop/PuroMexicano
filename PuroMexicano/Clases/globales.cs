@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 
@@ -185,6 +186,31 @@ namespace PuroMexicano.Clases
                 nuevacadena += letra.ToString();
             }
             return nuevacadena;
+        }
+
+        public static void Error(string Mensaje)
+        {
+            ToastConfig.DefaultBackgroundColor = System.Drawing.Color.FromArgb(244, 47, 73);
+            UserDialogs.Instance.ShowError(Mensaje);
+
+            //return mensajeError;
+        }
+
+        public static async Task<IDisposable> ToastInfo(string Mensaje)
+        {
+            ToastConfig.DefaultBackgroundColor = System.Drawing.Color.FromArgb(109, 188, 219);
+            var mensajeError = UserDialogs.Instance.Toast(Mensaje);
+
+            return mensajeError;
+        }
+
+        public static async Task<IDisposable> success(string Mensaje)
+        {
+
+            ToastConfig.DefaultBackgroundColor = System.Drawing.Color.FromArgb(56, 166, 84);
+            var mensajeError = UserDialogs.Instance.Toast(Mensaje);
+
+            return mensajeError;
         }
     }
 }

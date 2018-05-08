@@ -10,7 +10,7 @@
                <Grid x:Name="menuLateral" 
                       RowSpacing="0" 
                       ColumnSpacing="0"
-                     Padding = "20,15"
+                      Padding = "20,15"
                       VerticalOptions = "Start"
                       >
                     <Grid.RowDefinitions>

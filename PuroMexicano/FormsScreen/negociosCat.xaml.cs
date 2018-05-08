@@ -39,18 +39,44 @@ namespace PuroMexicano.FormsScreen
             {
                 foreach(negocio it in globales.lnegocios)
                 {
+                    
+                    Grid grid = new Grid
+                    {
+
+                    };
+                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3f, GridUnitType.Auto) });
+                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Auto) });
+
                     Button button = new Button
                     {
-                        Text = it.Nombre,
+                        Text = "",
                         Font = Font.SystemFontOfSize(NamedSize.Large),
                         BorderWidth = 1,
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.CenterAndExpand,
-                        ClassId = it.Id
-                                                       
+                        ClassId = it.Id,
+                        Image = this.getImage()
                     };
-                    button.Clicked += onClicked;    
-                    layout_Log.Children.Add(button);
+                    button.Clicked += onClicked; 
+
+                    Label name = new Label
+                    {
+                        Text = it.Nombre,
+                        TextColor = Color.Gray,
+                        FontSize = 18f,
+                        HorizontalOptions = LayoutOptions.Start,
+                        VerticalOptions = LayoutOptions.StartAndExpand,
+                        VerticalTextAlignment = TextAlignment.Center,
+                        Margin = new Thickness(10, 0)
+                    };
+
+
+                    grid.Children.Add(button, 0, 0);
+                    grid.Children.Add(name, 0, 0);
+                    Grid.SetRowSpan(button, 2);
+
+                      
+                    layout_Log.Children.Add(grid);
                     
                 }
             }
@@ -61,6 +87,7 @@ namespace PuroMexicano.FormsScreen
         {
             string id = getValue();
             var _result = await Task.Run<String>(() => { return SQL.getPromociones(_idNegocio.ToString()); });
+
             if (_result != "null")
             {
                 foreach (promocion it in globales.lpromociones)
@@ -73,6 +100,7 @@ namespace PuroMexicano.FormsScreen
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.CenterAndExpand,
                         ClassId = it.id
+
 
                     };
                     button.Clicked += onClickedPromo;
@@ -110,6 +138,25 @@ namespace PuroMexicano.FormsScreen
                 case "CUIDADO_PERSONAL": res = "8"; break;
                 case "FIESTA": res = "9"; break;
                 case "SERVICIOS": res = "10"; break;
+                default: res = ""; break;
+            }
+            return res;
+        }
+
+        private String getImage()
+        {
+            String res = "";
+            switch (_Catalogo)
+            {
+                case "COMIDA": res = "barracomida"; break;
+                case "BEBIDA": res = "barrabebida"; break;
+                case "EDUCACION": res = "barraeducacion"; break;
+                case "VIAJES": res = "barraviajes"; break;
+                case "DIVERSION": res = "barradiversion"; break;
+                case "HOGAR": res = "barrahogar"; break;
+                case "CUIDADO_PERSONAL": res = "barracuidadopersonal"; break;
+                case "FIESTA": res = "barrafiesta"; break;
+                case "SERVICIOS": res = "barrafiesta"; break;
                 default: res = ""; break;
             }
             return res;

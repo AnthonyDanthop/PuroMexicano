@@ -26,20 +26,19 @@ namespace PuroMexicano.FormsScreen
                 switch (result)
                 {
                     case "Login":
-                        await DisplayAlert("Login", "Bienvenido " + Application.Current.Properties[key: "nombre"].ToString(), "Aceptar");
+                        globales.ToastInfo( "Bienvenido " + Application.Current.Properties[key: "nombre"].ToString());
 
                         Application.Current.MainPage = new NavigationPage(new Menu());
+
                         break;
                     case "Password":
-                        await DisplayAlert("Login", "Contraseña incorrecta", "Aceptar");
+                        globales.Error("Contraseña incorrecta");
                         ePassword.Text = "";
-                        ePassword.Focus();
                        
                         break;
                     case "email":
                         eEmail.Text = ePassword.Text = "";
-                        eEmail.Focus();
-                        await DisplayAlert("Login", "Correo incorrecto", "Aceptar");
+                        globales.Error("Correo incorrecto");
                         break;
                     default:
                         await DisplayAlert("Login", result, "Aceptar");
