@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using PuroMexicano.Clases;
+using PuroMexicano.FormsScreen;
+using Xamarin.Forms;
 
 namespace PuroMexicano
 {
@@ -7,7 +9,24 @@ namespace PuroMexicano
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new PuroMexicanoPage());
+			MainPage = new NavigationPage(new PuroMexicanoPage());
+            
+			try
+			{
+				if (!bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
+				{
+					MainPage = new NavigationPage(new PuroMexicanoPage());
+				}
+				else
+				{
+					globales.ToastInfo("Bienvenido " + Application.Current.Properties[key: "nombre"].ToString());
+					MainPage = new NavigationPage(new PuroMexicano.FormsScreen.Menu());
+
+				}
+			}
+			catch{
+				MainPage = new NavigationPage(new PuroMexicanoPage());
+			}
             //MainPage = new PuroMexicanoPage();
         }
 

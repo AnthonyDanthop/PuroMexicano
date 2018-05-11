@@ -5,7 +5,8 @@
              BackgroundColor = "White">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout Padding = "10,25">
+            <StackLayout>
+            <StackLayout Padding = "10,25,0,0" Spacing = "15">
                  <Label BackgroundColor = "Gray" 
                            HeightRequest = "0.5">
                 </Label>
@@ -24,15 +25,16 @@
                 </Label>
                <Grid x:Name="controlGrid1" 
                        RowSpacing="0" 
-                          Padding = "0,0"
+                          Padding = "0,0,0,20"
                           ColumnSpacing="5" 
                           VerticalOptions = "Start"
                           >
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="3" />
@@ -42,9 +44,11 @@
                             
                     </Grid.ColumnDefinitions>
                     <BoxView VerticalOptions = "CenterAndExpand"
+                             HeightRequest = "55"
                              BackgroundColor = "#EE7426"
                              Grid.Row = "0"
                              Grid.Column = "0"
+                             Grid.RowSpan = "2"
                     ></BoxView>
                     <Label Text = "TICKET"
                            TextColor = "Gray"
@@ -53,49 +57,43 @@
                            FontSize="18" 
                            VerticalTextAlignment = "Center"
                     ></Label>
-                    <BoxView VerticalOptions = "CenterAndExpand"
-                             BackgroundColor = "#EE7426"
-                             Grid.Row = "1"
-                             Grid.Column = "0"
-                    ></BoxView>
                     <Entry x:Name = "eTicket" 
                            Placeholder = "Número de ticket"
                            TextColor = "Gray"
+                           FontSize = "Medium"
+                           VerticalOptions = "Start"
                            Grid.Row = "1"
                            Grid.Column = "1"
                            ></Entry>
                      <BoxView VerticalOptions = "CenterAndExpand"
+                             HeightRequest = "55"
                              BackgroundColor = "#EBD50A"
-                             Grid.Row = "2"
+                             Grid.Row = "3"
                              Grid.Column = "0"
+                             Grid.RowSpan = "2"
                     ></BoxView>
                     <Label Text = "MONTO"
-                           Grid.Row = "2"
+                           Grid.Row = "3"
                            Grid.Column = "1"
                            FontSize="18" 
                            VerticalTextAlignment = "Center"
                     ></Label>
-                    <BoxView VerticalOptions = "CenterAndExpand"
-                             BackgroundColor = "#EBD50A"
-                             Grid.Row = "3"
-                             Grid.Column = "0"
-                    ></BoxView>
+
                     <Entry Text= ""
                              Keyboard= "Numeric"
                            x:Name="eMonto" 
+                           FontSize = "Medium"
                            TextColor="Gray" 
                            Placeholder="Total de tu compra" 
                            PlaceholderColor="Gray" 
-                           IsPassword="True" 
-                           FontSize="18" 
                            HorizontalTextAlignment="Start"
 
-                           Grid.Row = "3"
+                           Grid.Row = "4"
                            Grid.Column = "1"
                     ></Entry>
                     </Grid>
-                 <Label BackgroundColor = "Gray" HeightRequest = "0.5"> </Label>
-                 <Button Text = "seleccionar negocio" TextColor = "White" BackgroundColor = "Red"></Button>
+                 <Label BackgroundColor = "Gray" HeightRequest = "0.5" > </Label>
+                 <Button BackgroundColor = "Transparent" ContentLayout = "Left,0" HeightRequest = "40" Image = "seleccionar_negocio" Text = "" ></Button>
                 <Label BackgroundColor = "Gray" HeightRequest = "0.5"> </Label>
                  <Label Text = "FOTO DEL TICKET"
                            FontSize="15" 
@@ -106,11 +104,19 @@
                            >
                     </Label>
                 <Label BackgroundColor = "Gray" HeightRequest = "0.5"> </Label>
-                <Button Image = "desdegaleria" Text = "" TextColor = "White" BackgroundColor = "Red" Clicked = "Elegir_Imagen" ContentLayout = "Left,0" HeightRequest = "40" ></Button>
-                <Button Image = "abrircamara" Text = "" TextColor = "White" BackgroundColor = "Red" Clicked = "HacerFoto" ContentLayout = "Left,0" HeightRequest = "40" ></Button>
-                <Image x:Name ="miImagen" BackgroundColor = "Green" HeightRequest = "180"> </Image>
-                <Button Text = "Enviar" TextColor = "White" BackgroundColor = "Red" ></Button>
+                <Button BackgroundColor = "Transparent"  Image = "desdegaleria" Text = "" TextColor = "White" Clicked = "Elegir_Imagen" ContentLayout = "Left,0" HeightRequest = "40" ></Button>
+                <Button BackgroundColor = "Transparent" Image = "abrircamara" Text = "" TextColor = "White" Clicked = "HacerFoto" ContentLayout = "Left,0" HeightRequest = "40" ></Button>
+                <Image x:Name = "miImagen" Aspect = "AspectFit"  Source = "sin_imagen" BackgroundColor = "#F3F4F6" HeightRequest = "180"> </Image>
+                <Button BackgroundColor = "Transparent"  Image = "enviar"  ContentLayout = "Left,0" HeightRequest = "40" WidthRequest = "160" HorizontalOptions = "Center" ></Button>
+                <Button BackgroundColor = "Transparent" Image = "tutorial"  ContentLayout = "Left,0" HeightRequest = "40" WidthRequest = "160" HorizontalOptions = "Center" ></Button>
             </StackLayout>
+             <StackLayout VerticalOptions = "EndAndExpand" Padding = "0,30,0,0">
+                 <Image Source = "barra_inferior"
+                   VerticalOptions = "EndAndExpand"
+                   Aspect = "Fill">
+                </Image>
+            </StackLayout>
+             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

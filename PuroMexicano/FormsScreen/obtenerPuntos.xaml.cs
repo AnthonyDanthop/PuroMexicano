@@ -28,7 +28,7 @@ namespace PuroMexicano.FormsScreen
                 foto.Dispose();
                 return stream;
             });
-            miImagen.Aspect = Aspect.Fill;
+			miImagen.Aspect = Aspect.AspectFit;
         }
 
         private async void Elegir_Imagen(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace PuroMexicano.FormsScreen
                         imagen.Dispose();
                         return stream;
                     });
-                    miImagen.Aspect = Aspect.Fill;
+					miImagen.Aspect = Aspect.AspectFit;
                 }
             }
         }﻿

@@ -6,20 +6,29 @@
              Title = "Master"
              Icon = "icon_master.png">
     <ContentPage.Content>
-        <StackLayout Spacing = "0">
-               <Grid x:Name="menuLateral" 
+        <Grid RowSpacing = "0" BackgroundColor = "#dadada">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+               <Grid x:Name="menuLateral"
+                     Grid.Row = "0"
+                     Grid.Column = "0"
                       RowSpacing="0" 
                       ColumnSpacing="0"
                       Padding = "20,15"
                       VerticalOptions = "Start"
+                     BackgroundColor = "White"
                       >
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="80" />
+                        <RowDefinition Height="100" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5" />
-                        <ColumnDefinition Width="180" />
-                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="100" />
                     </Grid.ColumnDefinitions>
                     <BoxView VerticalOptions = "CenterAndExpand"
                              BackgroundColor = "#DF1082"
@@ -38,86 +47,142 @@
                         VerticalOptions = "CenterAndExpand"
                         Grid.Row = "0"
                         Grid.Column = "2"
+                        Aspect = "AspectFit"
                         Source = "puromex.png"
                     ></controls:CircleImage>
                 </Grid>
-                <StackLayout Spacing = "0">
+                <StackLayout Grid.Row = "1"
+                             Grid.Column = "0"
+                             BackgroundColor = "White">
                      <Label 
-                        x:Name = "lCorreo"
-                        Text = "correo@gdominio.com" 
-                        Font = "12"
-                        Margin = "25,0"
-                        HorizontalOptions = "Start"
-                        VerticalOptions = "Start"
-                        TextColor = "#DF1082"
-                        HeightRequest = "30"
-                        ></Label>
+                            x:Name = "lCorreo"
+                            Text = "correo@gdominio.com" 
+                            Font = "14"
+                            Margin = "30,0"
+                            HorizontalOptions = "Start"
+                            VerticalOptions = "Start"
+                            TextColor = "#DF1082"
+                            HeightRequest = "30"
+
+                    ></Label>
+                </StackLayout>
+                <Grid  
+                      VerticalOptions = "FillAndExpand"
+                      Grid.Row = "2"
+                     Grid.Column = "0"
+                      RowSpacing = "0" 
+                      BackgroundColor = "#dadada">
+                <Grid.RowDefinitions>
+                     <RowDefinition Height="60" />
+                     <RowDefinition Height="40" />
+                     <RowDefinition Height="40" />
+                     <RowDefinition Height="40" />
+                     <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    
                     <Button Text = "MIS PUNTOS" 
                            BackgroundColor = "White" 
                            BorderColor = "Black"
                            BorderWidth = ".5"
-                           TextColor = "Black" 
-                           HorizontalOptions = "Fill"
-                           HeightRequest = "40"
+                           TextColor = "Gray" 
+                           FontSize = "23"
+
+                           HorizontalOptions = "FillAndExpand"
+                           VerticalOptions = "FillAndExpand"
                            Clicked = "misPuntos_Click"
-                            >
+                            Grid.Row = "0"
+                            Grid.Column = "0"
+                            Margin = "-5,-10"
+                            Image = "alcancia"
+                            ContentLayout = "Left, 30"
+                            > 
                            </Button>
                     <Button Text = "OBTENER PUNTOS" 
-                           BackgroundColor = "Gray" 
+                           BackgroundColor = "#dadada"
                            BorderColor = "Purple"
                            BorderWidth = ".5"
-                           TextColor = "Black" 
-                           HorizontalOptions = "Fill" 
+                           TextColor = "Gray" 
+                           HorizontalOptions = "FillAndExpand" 
                            HeightRequest = "40" 
-                            Clicked = "obtenerPuntos_Click">
+                            Clicked = "obtenerPuntos_Click"
+                            Margin = "-5,-10"
+                            Grid.Row = "1"
+                            Grid.Column = "0">
                            </Button>
                     <Button Text = "FAVORITOS" 
-                           BackgroundColor = "Gray" 
+                           BackgroundColor = "#dadada" 
                            BorderColor = "Purple"
                            BorderWidth = ".5"
-                           TextColor = "Black" 
-                           HorizontalOptions = "Fill" 
-                           HeightRequest = "40">
+                           TextColor = "Gray" 
+                           HorizontalOptions = "FillAndExpand" 
+                           HeightRequest = "40"
+                            Margin = "-5,-10"
+                            Grid.Row = "2"
+                        Grid.Column = "0">
                         </Button>
                     <Button Text = "MI NEGOCIO EN PURO MEXICANO" 
-                           BackgroundColor = "Gray" 
+                           BackgroundColor = "#dadada"
                            BorderColor = "Purple"
                            BorderWidth = ".5"
-                           TextColor = "Black" 
-                           HorizontalOptions = "Fill" 
-                           HeightRequest = "40">
+                           TextColor = "Gray" 
+                           HorizontalOptions = "FillAndExpand" 
+                           HeightRequest = "40"
+                            Margin = "-5,-10"
+                            Grid.Row = "3"
+                            Grid.Column = "0"
+                            Clicked = "miNegocio_Click">
                            </Button>
                     <Button Text = "TUTORIAL" 
-                           BackgroundColor = "Gray" 
+                           BackgroundColor = "#dadada"
                            BorderColor = "Purple"
                            BorderWidth = ".5"
-                           TextColor = "Black" 
-                           HorizontalOptions = "Fill" 
-                           HeightRequest = "40">
+                           TextColor = "Gray" 
+                           HorizontalOptions = "FillAndExpand" 
+                           HeightRequest = "40"
+                            Margin = "-5,-10"
+                            Grid.Row = "4"
+                        Grid.Column = "0">
                            </Button>
-                    </StackLayout>
-                    <StackLayout Spacing = "0" VerticalOptions = "EndAndExpand">
-                        <Button Text = "CONFIGURACION" 
-                               BackgroundColor = "Purple" 
-                               BorderColor = "Fuchsia"
-                               BorderWidth = ".5"
-                               TextColor = "Black" 
-                               VerticalOptions = "End"
-                               HorizontalOptions = "FillAndExpand" 
-                               HeightRequest = "40" 
-                                Clicked = "configPerfil"
-                                >
-                               </Button>
-                        <Button Text = "CERRAR SESION" 
-                               BackgroundColor = "Purple" 
-                               BorderColor = "Fuchsia"
-                               BorderWidth = ".5"
-                               TextColor = "Black" 
-                               VerticalOptions = "End"
-                               HorizontalOptions = "FillAndExpand" 
-                               HeightRequest = "40" >
-                               </Button>
-                    </StackLayout>
-        </StackLayout>
+                    </Grid>
+            <StackLayout Grid.Row = "4"
+                        Grid.Column = "0" 
+                         VerticalOptions = "EndAndExpand">
+                <Button Text = "CONFIGURACION" 
+                       BackgroundColor = "Purple" 
+                       BorderColor = "Fuchsia"
+                       BorderWidth = ".5"
+                       TextColor = "#f4efef" 
+                       VerticalOptions = "End"
+                       HorizontalOptions = "FillAndExpand" 
+                        FontSize = "Medium"
+                       HeightRequest = "50" 
+                       Clicked = "configPerfil"
+                       Margin = "-5,-9"
+                       Image = "config"
+                       ContentLayout = "Right,0"
+                        >
+                       </Button>
+                <Button Text = "CERRAR SESION" 
+                       BackgroundColor = "Purple" 
+                       BorderColor = "Fuchsia"
+                       BorderWidth = ".5"
+                       TextColor = "#f4efef" 
+                       VerticalOptions = "End"
+                       HorizontalOptions = "FillAndExpand"
+                       FontSize = "Medium" 
+                       HeightRequest = "50" 
+                       Margin = "-5,-9"
+                       Image = "cerrar"
+                       Clicked = "close"
+                       ContentLayout = "Right,0"
+                         >
+               </Button>
+            </StackLayout>
+                   
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

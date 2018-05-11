@@ -246,6 +246,26 @@
     <AndroidResource Include="Resources\drawable-xhdpi\barraviajes.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\flecha_derecha.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\barra_inferior.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\enviar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\seleccionar_negocio.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tutorial.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sin_imagen.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\puromexicanotoolbar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icon_master.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\promociones.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ubicacion.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\figura.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\guardar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\promo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\restricciones.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\vigencia.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\calidad.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\precio.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rapidez.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\servicio_al_cliente.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\alcancia.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cerrar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\config.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-xxxhdpi\" />

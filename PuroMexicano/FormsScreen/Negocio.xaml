@@ -4,29 +4,53 @@
              xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
              x:Class="PuroMexicano.FormsScreen.Negocio">
     <ContentPage.Content>
-       <ScrollView Orientation="Vertical">
-        <StackLayout VerticalOptions = "Start">
-            <StackLayout HeightRequest="200"
-                         Padding = "13,13"
+       <ScrollView Orientation="Vertical" Padding = "0">
+        <StackLayout Spacing = "0"> 
+             <StackLayout HeightRequest="160"
+                          Padding = "0,15,0,0"
+                         Spacing = "0"
+                         WidthRequest = "310"
                          VerticalOptions = "Start"
-                         HorizontalOptions = "FillAndExpand">
+                         HorizontalOptions = "Center">
                 <control:CarouselView x:Name="TutoCarousel">
                    <control:CarouselView.ItemTemplate>
                        <DataTemplate>
-                            <Image Source="{Binding .}"/>
+                                <Image Source="{Binding .}"  Aspect = "Fill"/>
                        </DataTemplate>
                    </control:CarouselView.ItemTemplate>
                 </control:CarouselView>
             </StackLayout>
+            <Grid  RowSpacing = "0"  HeightRequest = "90" >
+                <Grid.RowDefinitions>
+                     <RowDefinition Height="40"/>
+                     <RowDefinition Height="40"/>
+                 </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="60" />
+                </Grid.ColumnDefinitions>
+               
+                    <Image Grid.Row = "0" Grid.Column = "0" Grid.ColumnSpan = "3" Grid.RowSpan = "2" Source = "figura"
+                           Aspect = "AspectFit"
+                           VerticalOptions = "Start"
+                           >
+                        
+                    </Image>
                     <Label x:Name = "lNombre"
-                               Text = "negocio 1"
-                               WidthRequest = "100"
-                               HorizontalOptions = "Center"
-                               ></Label>
+                           Text = "negocio 1"
+                           VerticalOptions = "Center"
+                           HorizontalOptions = "Center"
+                           FontSize = "18"
+                           Grid.Row = "0"
+                           Grid.Column = "1"
+                     ></Label>
                     <Grid x:Name = "gDetalleNegocio"
                           VerticalOptions = "Center"
                           HorizontalOptions = "Center"
-                          Padding = "130,0">
+                          Grid.Row = "1"
+                          Grid.Column = "1"
+                          Padding = "10,0,0,0">
                          <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                          </Grid.RowDefinitions>
@@ -63,10 +87,11 @@
                                Grid.Column = "4"
                         ></Image>
                         
-                  </Grid>
+                    </Grid>
+                 </Grid>
                 <Grid x:Name="controlGrid1" 
                           RowSpacing="0" 
-                          Padding = "15,0"
+                          Padding = "15,20"
                           ColumnSpacing="5" 
                           VerticalOptions = "Start">
                     <Grid.RowDefinitions>
@@ -129,52 +154,22 @@
                     </Grid>
 
                 <StackLayout Padding = "14,0">
-                    <Button Text = "ubicacion"></Button>
-                    <Button Text = "promociones"
+                    <Button Text = "" Image = "ubicacion" BackgroundColor = "Transparent" ContentLayout = "Left,0"></Button>
+                    <Button Text = "" Image = "promociones" BackgroundColor = "Transparent" ContentLayout = "Left,0"
                             Clicked = "viewPromociones"
                             ></Button>
+                    <Button Text = "" Image = "guardar" BackgroundColor = "Transparent" ContentLayout = "Left,0"></Button>
                 </StackLayout>
-                <StackLayout>
-                    <Grid x:Name="barr" 
-                  RowSpacing="2" 
-                  ColumnSpacing="0"
-                  VerticalOptions = "End"
-                  >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100" />
-                    <RowDefinition Height="5" />    
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#DF1082"
-                         Grid.Row = "1"
-                         Grid.Column = "0"
-                ></BoxView>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#15836B"
-                         Grid.Row = "1"
-                         Grid.Column = "1"
-                ></BoxView>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#EBD50A"
-                         Grid.Row = "1"
-                         Grid.Column = "2"
-                ></BoxView>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#EE7426"
-                         Grid.Row = "1"
-                         Grid.Column = "3"
-                ></BoxView>
-                </Grid>
+               <StackLayout Padding = "0,20,0,0" VerticalOptions = "EndAndExpand">
+                     <Image Source = "barra_inferior"
+                       VerticalOptions = "EndAndExpand"
+                       Aspect = "Fill"
+                       Grid.Row = "1">
+                     </Image>
                </StackLayout>
                 
         </StackLayout>
-           
+            
     </ScrollView>
     </ContentPage.Content>
 </ContentPage>

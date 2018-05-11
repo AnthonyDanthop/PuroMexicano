@@ -127,16 +127,21 @@ namespace PuroMexicano.Clases
 
         public static bool isEmail(String Email)
         {
-            if (Email.Length > 0)
-            {
-                var str = Email;
-                Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-                Match match = regex.Match(str);
+			if (Email != null)
+			{
+				if (Email.Length > 0)
+				{
+					var str = Email;
+					Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+					Match match = regex.Match(str);
 
-                return match.Success;
-            }
-            else
-                return false;
+					return match.Success;
+				}
+				else
+					return false;
+			}
+			else
+				return false;
         }
 
         public static negocio GetNegocio(string id)

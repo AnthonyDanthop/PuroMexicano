@@ -16,7 +16,7 @@ namespace PuroMexicano.FormsScreen
         {
             InitializeComponent();
             _idPromo = id;
-            this.Title = "Validar Promoción";
+            
             lCodigo.Text = Codigo;//temp 
             loadCalif();
         }

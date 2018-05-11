@@ -15,7 +15,7 @@ namespace PuroMexicano.FormsScreen
         {
             InitializeComponent();
             this.loadPuntos();
-
+            
         }
 
         public async void loadPuntos()

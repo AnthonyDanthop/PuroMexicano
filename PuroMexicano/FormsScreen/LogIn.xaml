@@ -77,11 +77,13 @@
                                    HeightRequest = "0.5"
                                Margin = "0,25">
                         </Label>                
-                        <Button Text = "INICIAR SESION" 
-                           BackgroundColor = "#962081" 
+                        <Button Text = "" 
+                           BackgroundColor = "Transparent" 
                            TextColor = "White"
                            VerticalOptions = "Center" 
                            HorizontalOptions = "Center" 
+                           Image ="btn_iniciar.png"
+                           ContentLayout = "Left,0"
                            WidthRequest = "200" 
                            Clicked="OnButtonClicked"/>
                             

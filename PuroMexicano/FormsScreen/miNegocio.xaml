@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="PuroMexicano.FormsScreen.miNegocio"
+             BackgroundColor = "White">
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions = "Center" Padding = "15,10,15,0">
+            <StackLayout>
+            <Label Text = "Contacto"
+                   FontSize = "25"
+                   HorizontalOptions = "Center"
+                   
+           ></Label>
+           <Grid x:Name="controlGrid1" 
+                       RowSpacing="0" 
+                          Padding = "0,20,0,20"
+                          ColumnSpacing="5" 
+                          VerticalOptions = "Start"
+                          >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3" />
+                        <ColumnDefinition Width="8" />
+                            
+                    </Grid.ColumnDefinitions>
+                    <BoxView VerticalOptions = "CenterAndExpand"
+                             HeightRequest = "55"
+                             BackgroundColor = "#D97838"
+                             Grid.Row = "0"
+                             Grid.Column = "0"
+                             Grid.RowSpan = "2"
+                    ></BoxView>
+                    <Label Text = "NOMBRE DEL NEGOCIO"
+                           TextColor = "Gray"
+                           Grid.Row = "0"
+                           Grid.Column = "1"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+                    <Entry x:Name = "eNombre" 
+                           Placeholder = "Nombre del negocio *"
+                           TextColor = "Gray"
+                           FontSize = "Medium"
+                           VerticalOptions = "Start"
+                           Grid.Row = "1"
+                           Grid.Column = "1"
+                           ></Entry>
+                     <BoxView VerticalOptions = "CenterAndExpand"
+                             HeightRequest = "55"
+                             BackgroundColor = "#E4D136"
+                             Grid.Row = "3"
+                             Grid.Column = "0"
+                             Grid.RowSpan = "2"
+                    ></BoxView>
+                    <Label Text = "NOMBRE DEL CONTACTO"
+                           Grid.Row = "3"
+                           Grid.Column = "1"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+
+                    <Entry Text= ""
+                           
+                           x:Name="eContacto" 
+                           FontSize = "Medium"
+                           TextColor="Gray" 
+                           Placeholder="Nombre del contacto *" 
+                           PlaceholderColor="Gray" 
+                           HorizontalTextAlignment="Start"
+
+                           Grid.Row = "4"
+                           Grid.Column = "1"
+                    ></Entry>
+                <BoxView VerticalOptions = "CenterAndExpand"
+                             HeightRequest = "55"
+                             BackgroundColor = "#74B5AD"
+                             Grid.Row = "6"
+                             Grid.Column = "0"
+                             Grid.RowSpan = "2"
+                    ></BoxView>
+                    <Label Text = "TELEFONO DEL CONTACTO"
+                           Grid.Row = "6"
+                           Grid.Column = "1"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+
+                    <Entry Text= ""
+                            Keyboard= "Numeric"
+                           x:Name="eTelContacto" 
+                           FontSize = "Medium"
+                           TextColor="Gray" 
+                           Placeholder="Telefono del contacto *" 
+                           PlaceholderColor="Gray" 
+                           HorizontalTextAlignment="Start"
+
+                           Grid.Row = "7"
+                           Grid.Column = "1"
+                    ></Entry>
+
+                <BoxView VerticalOptions = "CenterAndExpand"
+                             HeightRequest = "55"
+                             BackgroundColor = "#BA2D7A"
+                             Grid.Row = "9"
+                             Grid.Column = "0"
+                             Grid.RowSpan = "2"
+                    ></BoxView>
+                    <Label Text = "DIRECCIÓN"
+                           Grid.Row = "9"
+                           Grid.Column = "1"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+
+                    <Entry Text= ""
+                           
+                           x:Name="eDireccion" 
+                           FontSize = "Medium"
+                           TextColor="Gray" 
+                           Placeholder="Dirección *" 
+                           PlaceholderColor="Gray" 
+                           HorizontalTextAlignment="Start"
+
+                           Grid.Row = "10"
+                           Grid.Column = "1"
+                    ></Entry>
+
+                <BoxView VerticalOptions = "CenterAndExpand"
+                             HeightRequest = "55"
+                             BackgroundColor = "#DB783B"
+                             Grid.Row = "12"
+                             Grid.Column = "0"
+                             Grid.RowSpan = "2"
+                    ></BoxView>
+                    <Label Text = "EMAIL"
+                           Grid.Row = "12"
+                           Grid.Column = "1"
+                           FontSize="18" 
+                           VerticalTextAlignment = "Center"
+                    ></Label>
+
+                    <Entry Text= ""
+                           
+                           x:Name="eEmail" 
+                           FontSize = "Medium"
+                           TextColor="Gray" 
+                           Placeholder="Email *" 
+                           PlaceholderColor="Gray" 
+                           HorizontalTextAlignment="Start"
+
+                           Grid.Row = "13"
+                           Grid.Column = "1"
+                    ></Entry>
+                    </Grid>
+            <Button Image = "enviar" HorizontalOptions = "Center" Margin = "0,20" Clicked = "send" BackgroundColor = "Transparent"></Button>
+
+                 
+                         <Image Source = "barra_inferior"
+                       VerticalOptions = "EndAndExpand"
+                       Aspect = "Fill"
+                       Grid.Row = "1">
+                     </Image>
+            </StackLayout>
+       
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

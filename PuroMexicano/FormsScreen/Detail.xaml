@@ -8,9 +8,13 @@
     <ContentPage.Content>
          <ScrollView>
             <Grid 
-              Padding = "0,10"
-              RowSpacing="20" 
+              Padding = "2,10,2,0"
+              RowSpacing="5" 
               ColumnSpacing="3">
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
                 <Grid x:Name = "gMenu"
                       VerticalOptions = "Center"
                       HorizontalOptions = "Center">
@@ -20,7 +24,6 @@
                         <RowDefinition Height="170"/>
                         <RowDefinition Height="170"/>
                         <RowDefinition Height="170"/>
-                        
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="170" />
@@ -143,12 +146,13 @@
                        Clicked = "OnButtonClicked"
                     />
                 </Grid>
-                  <Image Source = "barra_inferior"
-                   VerticalOptions = "EndAndExpand"
-                   Aspect = "Fill"
-                   Margin = "0,20">
-            </Image>
+                <Image Source = "barra_inferior"
+                       VerticalOptions = "EndAndExpand"
+                       Aspect = "Fill"
+                       Grid.Row = "1">
+                     </Image>
             </Grid>
+
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

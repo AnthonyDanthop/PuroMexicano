@@ -90,6 +90,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsScreen\miNegocio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -146,6 +150,9 @@
     </Compile>
     <Compile Include="FormsScreen\obtenerPuntos.xaml.cs">
       <DependentUpon>obtenerPuntos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormsScreen\miNegocio.xaml.cs">
+      <DependentUpon>miNegocio.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

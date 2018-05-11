@@ -17,7 +17,7 @@ namespace PuroMexicano.FormsScreen
             InitializeComponent();
             _Catalogo = catalogo;
             loadNegocios();
-            this.Title = "Negocios";
+            this.Ltitle.Text = "Negocios";
         }
         /// <summary>
         /// cuando se muestran las promociones del negocio
@@ -29,7 +29,7 @@ namespace PuroMexicano.FormsScreen
             _Catalogo = String.Empty;
             _idNegocio = idNegocio;
             loadPromociones();
-            this.Title = "Promociones";
+			this.Ltitle.Text = "Promociones";
         }
         public async void loadNegocios()
         {
@@ -44,18 +44,21 @@ namespace PuroMexicano.FormsScreen
                     {
 
                     };
-                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3f, GridUnitType.Auto) });
+                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1f, GridUnitType.Auto) });
                     grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Auto) });
 
-                    Button button = new Button
-                    {
-                        Text = "",
-                        Font = Font.SystemFontOfSize(NamedSize.Large),
-                        BorderWidth = 1,
-                        HorizontalOptions = LayoutOptions.FillAndExpand,
-                        VerticalOptions = LayoutOptions.CenterAndExpand,
-                        ClassId = it.Id,
-                        Image = this.getImage()
+					Button button = new Button
+					{
+						Text = "",
+						Font = Font.SystemFontOfSize(NamedSize.Large),
+						BorderWidth = 1,
+						HorizontalOptions = LayoutOptions.FillAndExpand,
+						VerticalOptions = LayoutOptions.CenterAndExpand,
+						ClassId = it.Id,
+						Image = this.getImage(),
+                        HeightRequest = 50,
+
+                        BackgroundColor = Color.Transparent
                     };
                     button.Clicked += onClicked; 
 
@@ -65,15 +68,12 @@ namespace PuroMexicano.FormsScreen
                         TextColor = Color.Gray,
                         FontSize = 18f,
                         HorizontalOptions = LayoutOptions.Start,
-                        VerticalOptions = LayoutOptions.StartAndExpand,
+                        VerticalOptions = LayoutOptions.Center,
                         VerticalTextAlignment = TextAlignment.Center,
                         Margin = new Thickness(10, 0)
-                    };
-
-
+                    };               
                     grid.Children.Add(button, 0, 0);
                     grid.Children.Add(name, 0, 0);
-                    Grid.SetRowSpan(button, 2);
 
                       
                     layout_Log.Children.Add(grid);
@@ -87,25 +87,67 @@ namespace PuroMexicano.FormsScreen
         {
             string id = getValue();
             var _result = await Task.Run<String>(() => { return SQL.getPromociones(_idNegocio.ToString()); });
-
+			int cont = 1;
+            
             if (_result != "null")
             {
+				
                 foreach (promocion it in globales.lpromociones)
                 {
+					Grid grid = new Grid
+                    {
+						VerticalOptions = LayoutOptions.FillAndExpand,
+                        HorizontalOptions = LayoutOptions.FillAndExpand
+                    };
+                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1f, GridUnitType.Auto) });
+                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(310f, GridUnitType.Absolute) });
+					grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(30f, GridUnitType.Absolute) });
+
                     Button button = new Button
                     {
-                        Text = it.nombre,
+                        Text = "",
                         Font = Font.SystemFontOfSize(NamedSize.Large),
                         BorderWidth = 1,
                         HorizontalOptions = LayoutOptions.FillAndExpand,
-                        VerticalOptions = LayoutOptions.CenterAndExpand,
-                        ClassId = it.id
-
-
+                        VerticalOptions = LayoutOptions.FillAndExpand,
+                        BackgroundColor = Color.Transparent,
+                        HeightRequest = 50,
+                        ClassId = it.id,
+                        Image = "promo"
+					};
+					button.Clicked += onClickedPromo;
+                    
+					Label name = new Label
+                    {
+                        Text = it.nombre,
+                        TextColor = Color.Gray,
+                        FontSize = 18f,
+                        HorizontalOptions = LayoutOptions.Start,
+                        VerticalOptions = LayoutOptions.Center,
+                        VerticalTextAlignment = TextAlignment.Center,
+                        Margin = new Thickness(15, 0)
                     };
-                    button.Clicked += onClickedPromo;
-                    layout_Log.Children.Add(button);
 
+					Label num = new Label
+					{
+						Text = cont.ToString(),
+						TextColor = Color.White,
+						FontSize = 18f,
+						FontAttributes = FontAttributes.Bold,
+                        HorizontalOptions = LayoutOptions.Start,
+                        VerticalOptions = LayoutOptions.Center,
+						Margin = new Thickness(2, 0)
+                        
+                    };          
+               
+                    grid.Children.Add(name, 0, 0);
+
+					grid.Children.Add(button, 0, 0);
+					grid.Children.Add(num, 1, 0);
+					Grid.SetColumnSpan(button, 2);
+
+                    layout_Log.Children.Add(grid);
+					cont++;
                 }
             }
 

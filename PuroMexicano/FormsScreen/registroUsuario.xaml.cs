@@ -37,7 +37,7 @@ namespace PuroMexicano.FormsScreen
 
             }
             else
-                await DisplayAlert("Error", "Datos incorrectos", "Aceptar");
+                globales.Error("Datos incorrectos");
 
         }
 
@@ -49,19 +49,19 @@ namespace PuroMexicano.FormsScreen
             {
                 eEmail.Text = ePassword.Text = "";
                 eEmail.Focus();
-                res = false;
+                return false;
             }
             if (ePassword.Text.Length == 0)
             {
                 ePassword.Text = "";
                 ePassword.Focus();
-                res = false;
+				return false;
             }
             if (eUsuario.Text.Length == 0 || eUsuario.Text.Length >= globales.Length_nombre)
             {
                 eUsuario.Text = "";
                 eUsuario.Focus();
-                res = false;
+				return false;
             }
             return res;
         }

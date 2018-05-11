@@ -203,6 +203,26 @@
     <BundleResource Include="Resources\barraviajes.png" />
     <BundleResource Include="Resources\flecha_derecha.png" />
     <BundleResource Include="Resources\barra_inferior.png" />
+    <BundleResource Include="Resources\sin_imagen.png" />
+    <BundleResource Include="Resources\enviar.png" />
+    <BundleResource Include="Resources\seleccionar_negocio.png" />
+    <BundleResource Include="Resources\tutorial.png" />
+    <BundleResource Include="Resources\puromexicanotoolbar.png" />
+    <BundleResource Include="Resources\promociones.png" />
+    <BundleResource Include="Resources\ubicacion.png" />
+    <BundleResource Include="Resources\IMAGEN.png" />
+    <BundleResource Include="Resources\figura.png" />
+    <BundleResource Include="Resources\guardar.png" />
+    <BundleResource Include="Resources\promo.png" />
+    <BundleResource Include="Resources\restricciones.png" />
+    <BundleResource Include="Resources\vigencia.png" />
+    <BundleResource Include="Resources\calidad.png" />
+    <BundleResource Include="Resources\precio.png" />
+    <BundleResource Include="Resources\rapidez.png" />
+    <BundleResource Include="Resources\servicio_al_cliente.png" />
+    <BundleResource Include="Resources\alcancia.png" />
+    <BundleResource Include="Resources\cerrar.png" />
+    <BundleResource Include="Resources\config.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />

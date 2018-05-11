@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuroMexicano.FormsScreen.Promocion">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="PuroMexicano.FormsScreen.Promocion" BackgroundColor = "White">
     <ContentPage.Content>
-        <ScrollView Orientation = "Vertical">
+        <ScrollView Orientation = "Vertical" >
             <Grid VerticalOptions = "FillAndExpand">
                 <StackLayout Padding = "30"
                              Spacing = "10"
-                             VerticalOptions = "Center">
+                             VerticalOptions = "Center"
+                             >
                     
                     <Grid x:Name="controlGrid1" 
                           RowSpacing="0" 
@@ -14,10 +15,10 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                         <RowDefinition Height="*" />
+                        <RowDefinition Height="1" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="*" />
+                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
@@ -26,8 +27,8 @@
                         <ColumnDefinition Width="*" />
                             
                     </Grid.ColumnDefinitions>
-                    <BoxView VerticalOptions = "CenterAndExpand"
-                             BackgroundColor = "#EE7426"
+                    <BoxView VerticalOptions = "StartAndExpand"
+                             BackgroundColor = "#dc8d57"
                              Grid.Row = "0"
                              Grid.Column = "0"
                     ></BoxView>
@@ -38,64 +39,67 @@
                            FontSize="28" 
                            VerticalTextAlignment = "Center"
                     ></Label>
-                    <BoxView VerticalOptions = "CenterAndExpand"
-                             BackgroundColor = "#EE7426"
-                             Grid.Row = "1"
-                             Grid.Column = "0"
-                    ></BoxView>
+
                     <Label Text="Descripcion"
-                           FontSize="25" 
-                           YAlign = "Center"
+                           FontSize="18" 
+                           VerticalOptions = "Start"
                            Grid.Row = "1"
                            Grid.Column = "1"
                            ></Label>
                     <BoxView VerticalOptions = "CenterAndExpand"
-                             BackgroundColor = "#15836B"
-                             Grid.Row = "2"
+                             BackgroundColor = "#c93a8b"
+                             Grid.Row = "1"
                              Grid.Column = "0"
+                             HeightRequest = "50"
                     ></BoxView>
                     <Label x:Name = "lDescripcion"
                            Text = ""
-                           FontSize="18" 
-                           Grid.Row = "2"
+                           FontSize="Small" 
+                           Grid.Row = "1"
                            Grid.Column = "1"
-                           VerticalTextAlignment = "Center"
+                           VerticalOptions = "End"
                     ></Label>
-                    <Label 
-                           Text = "RESTRICCIONES"
-                           FontSize="12" 
+                    <Image 
+                           Source = "restricciones"
+                            Aspect = "AspectFit"
                            Grid.Row = "3"
                            Grid.Column = "1"
-                           VerticalTextAlignment = "Center"
-                    ></Label>
+                           HorizontalOptions = "Start"
+                    ></Image>
                     <Label x:Name = "lRestricciones"
                            Text = ""
                            FontSize="15" 
                            Grid.Row = "4"
                            Grid.Column = "1"
-                           VerticalTextAlignment = "Center"
+                           HorizontalOptions = "Start"
                            
                     ></Label>
-                    <Label 
-                           Text = "VIGENCIA"
-                           FontSize="12" 
+                     <Image 
+                           Source = "vigencia"
+                            Aspect = "AspectFit"
+                            HorizontalOptions = "Start"
+
                            Grid.Row = "5"
                            Grid.Column = "1"
-                           VerticalTextAlignment = "End"
-                           
-                    ></Label>
+
+                    ></Image>
                     <Label x:Name = "lFechaV"
                            FontSize = "15"
                                 Grid.Row = "6"
                                 Grid.Column = "1"
+
+                            HorizontalOptions = "Start"
                                 >
                     </Label>
                     <Button Text = "VALIDAR"
-                            BorderWidth = "1"
+                            TextColor = "White"
+                            WidthRequest = "140"
                             Clicked = "onValidate"
-                            BorderColor = "Red"
+                            HorizontalOptions = "Center"
+                            BackgroundColor = "#c93a8b"
                             Grid.Row = "7"
                             Grid.Column = "1"
+                            Margin ="0,30"
                     ></Button>
                       
                     </Grid>

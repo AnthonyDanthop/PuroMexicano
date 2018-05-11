@@ -129,7 +129,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                        <Image Source="bar_star.png" Aspect="Fill" ></Image>
+                        <Image Source="servicio_al_cliente.png" Aspect="Fill" ></Image>
                         <Grid Padding = "180,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
@@ -197,7 +197,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                        <Image Source="bar_star.png" Aspect="Fill" ></Image>
+                        <Image Source="rapidez.png" Aspect="Fill" ></Image>
                         <Grid Padding = "180,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
@@ -265,7 +265,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                        <Image Source="bar_star.png" Aspect="Fill" ></Image>
+                        <Image Source="calidad.png" Aspect="Fill" ></Image>
                         <Grid Padding = "180,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
@@ -333,7 +333,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                        <Image Source="bar_star.png" Aspect="Fill" ></Image>
+                        <Image Source="precio.png" Aspect="Fill" ></Image>
                         <Grid Padding = "180,0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
@@ -399,52 +399,20 @@
                 </Grid>
 
            </Grid>
-            <StackLayout Padding = "44,30" VerticalOptions = "Center">
+            <StackLayout Padding = "70,15" VerticalOptions = "Center">
                 <Button Text = "ACEPTAR"
                         BackgroundColor = "Purple"
                         TextColor = "White"
                         Clicked = "updateCalif">
-                        
+
                     </Button>
 
             </StackLayout>
-            <StackLayout>
-                    <Grid x:Name="barr" 
-                  RowSpacing="2" 
-                  ColumnSpacing="0"
-                  VerticalOptions = "End"
-                  >
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100" />
-                    <RowDefinition Height="5" />    
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#DF1082"
-                         Grid.Row = "1"
-                         Grid.Column = "0"
-                ></BoxView>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#15836B"
-                         Grid.Row = "1"
-                         Grid.Column = "1"
-                ></BoxView>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#EBD50A"
-                         Grid.Row = "1"
-                         Grid.Column = "2"
-                ></BoxView>
-                <BoxView VerticalOptions = "CenterAndExpand"
-                         BackgroundColor = "#EE7426"
-                         Grid.Row = "1"
-                         Grid.Column = "3"
-                ></BoxView>
-                </Grid>
+            <StackLayout VerticalOptions = "EndAndExpand">
+                    <Image Source = "barra_inferior"
+                       VerticalOptions = "FillAndExpand"
+                       Aspect = "Fill">
+                     </Image>
                </StackLayout>
                 
         </StackLayout>

@@ -5,9 +5,20 @@
               >
     <ContentPage.Content>
          <ScrollView>
-            <StackLayout Spacing="3" 
-                     x:Name="layout_Log"
-                     VerticalOptions = "Center">
+            <StackLayout VerticalOptions = "FillAndExpand">
+                <Label Text = "" 
+                       FontSize = "Medium" 
+                       x:Name = "Ltitle" 
+                       TextColor = "Black" 
+                       VerticalOptions = "Start" 
+                       HorizontalOptions = "Center" 
+                       Margin = "15,15"></Label>
+                <StackLayout Spacing="2" 
+                         x:Name="layout_Log"
+                         VerticalOptions = "Center"
+                         Padding = "2,0">
+                    
+                </StackLayout>
             </StackLayout>
       </ScrollView>
     </ContentPage.Content>
