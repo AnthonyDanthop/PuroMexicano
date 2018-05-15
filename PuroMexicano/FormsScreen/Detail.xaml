@@ -145,6 +145,19 @@
                        Grid.Column = "0"
                        Clicked = "OnButtonClicked"
                     />
+                    <Button 
+                       ClassId = "MASCOTAS"
+                       Text = "" 
+                       BackgroundColor = "Transparent" 
+                       TextColor = "Black"
+                       VerticalOptions = "FillAndExpand" 
+                       HorizontalOptions = "FillAndExpand" 
+                       Image ="Mascotas.png"
+                       ContentLayout = "Left,0"
+                       Grid.Row = "4"
+                       Grid.Column = "1"
+                       Clicked = "OnButtonClicked"
+                    />
                 </Grid>
                 <Image Source = "barra_inferior"
                        VerticalOptions = "EndAndExpand"

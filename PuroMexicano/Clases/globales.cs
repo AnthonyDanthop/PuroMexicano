@@ -203,7 +203,8 @@ namespace PuroMexicano.Clases
 
         public static void ToastInfo(string Mensaje)
         {
-            ToastConfig.DefaultBackgroundColor = System.Drawing.Color.FromArgb(109, 188, 219);
+            ToastConfig.DefaultBackgroundColor = System.Drawing.Color.FromArgb(144, 109, 219);
+			ToastConfig.DefaultActionTextColor = System.Drawing.Color.White;
             UserDialogs.Instance.Toast(Mensaje);
 
         }

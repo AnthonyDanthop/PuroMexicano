@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using PuroMexicano.Clases;
 using Xamarin.Forms;
 
@@ -33,17 +35,16 @@ namespace PuroMexicano.FormsScreen
             }
         }
 
-		private async  void close(object sender, System.EventArgs e)
-        {
-            if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
-            {
+		private async void close(object sender, System.EventArgs e)
+		{
+			if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
+			{
 				globales.ToastInfo("Adios " + Application.Current.Properties[key: "nombre"].ToString());
 				Application.Current.Properties.Clear();
-
-                await Navigation.PushAsync(new PuroMexicanoPage());
-
-            }
-        }
+				//Application.Current.MainPage = new NavigationPage(new PuroMexicanoPage());
+				await Navigation.PushAsync(new PuroMexicanoPage());
+			}
+		}
 
 
         async void misPuntos_Click(object sender, System.EventArgs e)
@@ -51,6 +52,16 @@ namespace PuroMexicano.FormsScreen
             if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
             {
                 await Navigation.PushAsync(new misPuntos());
+            }
+        }
+
+		async void favoritos_Click(object sender, System.EventArgs e)
+        {
+            if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
+            {
+				
+					await Navigation.PushAsync(new negociosCat());
+					
             }
         }
 

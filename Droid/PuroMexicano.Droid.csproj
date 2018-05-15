@@ -266,6 +266,12 @@
     <AndroidResource Include="Resources\drawable-xhdpi\alcancia.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\cerrar.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\config.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Mascotas.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\validar.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ACEPTAR.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\corazon_morado.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\corazon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\barracorazon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable-xxxhdpi\" />

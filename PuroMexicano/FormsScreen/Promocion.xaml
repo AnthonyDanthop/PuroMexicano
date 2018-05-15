@@ -91,15 +91,18 @@
                             HorizontalOptions = "Start"
                                 >
                     </Label>
-                    <Button Text = "VALIDAR"
+                    <Button Text = ""
                             TextColor = "White"
-                            WidthRequest = "140"
+                            WidthRequest = "160"
+                            HeightRequest = "45"
                             Clicked = "onValidate"
                             HorizontalOptions = "Center"
-                            BackgroundColor = "#c93a8b"
+                            BackgroundColor = "Transparent"
                             Grid.Row = "7"
                             Grid.Column = "1"
-                            Margin ="0,30"
+                            Image = "validar"
+                            ContentLayout = "Left,0"
+                            Margin ="0,20"
                     ></Button>
                       
                     </Grid>

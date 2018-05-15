@@ -121,6 +121,7 @@
                            HorizontalOptions = "FillAndExpand" 
                            HeightRequest = "40"
                             Margin = "-5,-10"
+                            Clicked = "favoritos_Click"
                             Grid.Row = "2"
                         Grid.Column = "0">
                         </Button>

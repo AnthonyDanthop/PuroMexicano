@@ -400,8 +400,12 @@
 
            </Grid>
             <StackLayout Padding = "70,15" VerticalOptions = "Center">
-                <Button Text = "ACEPTAR"
-                        BackgroundColor = "Purple"
+                <Button Text = ""
+                        Image = "ACEPTAR"
+                        ContentLayout = "Left,0"
+                        BackgroundColor = "Transparent"
+
+                        HeightRequest = "45"
                         TextColor = "White"
                         Clicked = "updateCalif">
 

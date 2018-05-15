@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using PuroMexicano.Clases;
 using Xamarin.Forms;
@@ -12,6 +13,10 @@ namespace PuroMexicano.FormsScreen
         private String _Catalogo;
         private int _idNegocio;
 
+        /// <summary>
+        /// Muestra negocios por categoria
+        /// </summary>
+        /// <param name="catalogo">Catalogo.</param>
         public negociosCat(String catalogo)
         {
             InitializeComponent();
@@ -31,6 +36,91 @@ namespace PuroMexicano.FormsScreen
             loadPromociones();
 			this.Ltitle.Text = "Promociones";
         }
+
+		protected override void OnAppearing()
+        {
+            base.OnAppearing();
+			if (Ltitle.Text == "Favoritos")
+			{
+				layout_Log.Children.Clear();
+				loadFavoritos();
+			}
+
+        }
+
+        /// <summary>
+        /// muestra los negocios cargados en favoritos
+        /// </summary>
+		public negociosCat()
+        {
+            InitializeComponent();
+            _Catalogo = String.Empty;
+            //loadFavoritos();
+            this.Ltitle.Text = "Favoritos";
+        }
+
+		public async void loadFavoritos()
+        {
+            //var _result = await Task.Run<String>(() => { return SQL.getNegocios(id); });
+			string query = "SELECT * FROM `negocio` WHERE `id` in (SELECT `id_negocio` from `favoritos` where `id_usuario` =  "
+                    + Application.Current.Properties[key: "id"].ToString() + ");";
+
+            var _result = await Task.Run<String>(() => { return SQL.queryResult(query); });
+
+			if (_result != "NULL")
+			{
+				globales.lnegocios = JsonConvert.DeserializeObject<List<negocio>>(_result);
+				foreach (negocio it in globales.lnegocios)
+				{
+
+					Grid grid = new Grid
+					{
+
+					};
+					grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1f, GridUnitType.Auto) });
+					grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Auto) });
+
+					Button button = new Button
+					{
+						Text = "",
+						Font = Font.SystemFontOfSize(NamedSize.Large),
+						BorderWidth = 1,
+						HorizontalOptions = LayoutOptions.FillAndExpand,
+						VerticalOptions = LayoutOptions.CenterAndExpand,
+						ClassId = it.Id,
+						Image = "barracorazon",
+						HeightRequest = 50,
+
+						BackgroundColor = Color.Transparent
+					};
+					button.Clicked += onClicked;
+
+					Label name = new Label
+					{
+						Text = it.Nombre,
+						TextColor = Color.Gray,
+						FontSize = 18f,
+						HorizontalOptions = LayoutOptions.Start,
+						VerticalOptions = LayoutOptions.Center,
+						VerticalTextAlignment = TextAlignment.Center,
+						Margin = new Thickness(10, 0)
+					};
+
+					grid.Children.Add(name, 0, 0);
+					grid.Children.Add(button, 0, 0);
+
+
+
+					layout_Log.Children.Add(grid);
+
+				}
+			}
+			else
+				globales.success("Aún no agregas favoritos");
+
+        }
+
+
         public async void loadNegocios()
         {
             string id = getValue();
@@ -71,11 +161,11 @@ namespace PuroMexicano.FormsScreen
                         VerticalOptions = LayoutOptions.Center,
                         VerticalTextAlignment = TextAlignment.Center,
                         Margin = new Thickness(10, 0)
-                    };               
-                    grid.Children.Add(button, 0, 0);
-                    grid.Children.Add(name, 0, 0);
+                    };              
 
-                      
+					grid.Children.Add(name, 0, 0);
+                    grid.Children.Add(button, 0, 0);
+                                          
                     layout_Log.Children.Add(grid);
                     
                 }
@@ -179,7 +269,8 @@ namespace PuroMexicano.FormsScreen
                 case "HOGAR": res = "7"; break;
                 case "CUIDADO_PERSONAL": res = "8"; break;
                 case "FIESTA": res = "9"; break;
-                case "SERVICIOS": res = "10"; break;
+				case "SERVICIOS": res = "10"; break;
+                case "MASCOTAS": res = "11"; break;
                 default: res = ""; break;
             }
             return res;
@@ -198,7 +289,8 @@ namespace PuroMexicano.FormsScreen
                 case "HOGAR": res = "barrahogar"; break;
                 case "CUIDADO_PERSONAL": res = "barracuidadopersonal"; break;
                 case "FIESTA": res = "barrafiesta"; break;
-                case "SERVICIOS": res = "barrafiesta"; break;
+				case "SERVICIOS": res = "barraservicios"; break;
+				case "MASCOTAS": res = "barramascotas"; break;
                 default: res = ""; break;
             }
             return res;

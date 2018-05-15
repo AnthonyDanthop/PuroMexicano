@@ -2,24 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:control="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
-             x:Class="PuroMexicano.FormsScreen.Negocio">
+             x:Class="PuroMexicano.FormsScreen.Negocio"
+             BackgroundColor = "White">
     <ContentPage.Content>
        <ScrollView Orientation="Vertical" Padding = "0">
         <StackLayout Spacing = "0"> 
-             <StackLayout HeightRequest="160"
+            <Grid RowSpacing = "0" HorizontalOptions = "Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="90"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+             <StackLayout HeightRequest="180"
                           Padding = "0,15,0,0"
                          Spacing = "0"
                          WidthRequest = "310"
                          VerticalOptions = "Start"
-                         HorizontalOptions = "Center">
+                         HorizontalOptions = "Center"
+                          Grid.Row = "0" Grid.Column = "0" Grid.RowSpan = "2" Grid.ColumnSpan = "2"
+                          >
                 <control:CarouselView x:Name="TutoCarousel">
                    <control:CarouselView.ItemTemplate>
-                       <DataTemplate>
-                                <Image Source="{Binding .}"  Aspect = "Fill"/>
+                       <DataTemplate>    
+                                    <Image Source="{Binding .}"  Aspect = "Fill"/>
                        </DataTemplate>
                    </control:CarouselView.ItemTemplate>
                 </control:CarouselView>
             </StackLayout>
+                 <Button Clicked = "addFavorito" x:Name = "fav" HorizontalOptions = "CenterAndExpand" VerticalOptions = "CenterAndExpand" Margin = "0,10" BackgroundColor = "Transparent" Image = "corazon" Grid.Row = "0" Grid.Column = "1" ContentLayout = "Left,0" ></Button>
+            </Grid>
             <Grid  RowSpacing = "0"  HeightRequest = "90" >
                 <Grid.RowDefinitions>
                      <RowDefinition Height="40"/>
@@ -155,10 +169,7 @@
 
                 <StackLayout Padding = "14,0">
                     <Button Text = "" Image = "ubicacion" BackgroundColor = "Transparent" ContentLayout = "Left,0"></Button>
-                    <Button Text = "" Image = "promociones" BackgroundColor = "Transparent" ContentLayout = "Left,0"
-                            Clicked = "viewPromociones"
-                            ></Button>
-                    <Button Text = "" Image = "guardar" BackgroundColor = "Transparent" ContentLayout = "Left,0"></Button>
+                    <Button Text = "" Image = "promociones" BackgroundColor = "Transparent" ContentLayout = "Left,0" Clicked = "viewPromociones"></Button>                 
                 </StackLayout>
                <StackLayout Padding = "0,20,0,0" VerticalOptions = "EndAndExpand">
                      <Image Source = "barra_inferior"

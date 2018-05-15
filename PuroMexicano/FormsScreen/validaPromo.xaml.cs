@@ -58,7 +58,7 @@ namespace PuroMexicano.FormsScreen
             var result = await Task.Run<String>(() => { return SQL.calificaPromocion(_idPromo, puntaje); });
             if(result == "done")
             {
-                await DisplayAlert("Califica Negocio", "Gracias por tu puntuación", "Aceptar");
+                globales.ToastInfo("Gracias por tu puntuación");
                 this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 1]);
                 this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 2]);
 

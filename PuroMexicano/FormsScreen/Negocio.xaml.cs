@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NodaTime;
 using PuroMexicano.Clases;
 using Xamarin.Forms;
@@ -9,7 +11,8 @@ namespace PuroMexicano.FormsScreen
 {
     public partial class Negocio : ContentPage
     {
-       private string _id;
+        private string _id;
+		private bool isFavoito;
 
         public Negocio(String id)
         {
@@ -22,7 +25,28 @@ namespace PuroMexicano.FormsScreen
             lDesc.Text = n.descripcion;
             lHorario.Text = n.horario;
             this.setStar(int.Parse(n.rating));
+			this.Favorito();
         }
+
+        private async void Favorito()
+		{
+			string query = "SELECT `F`.`id_negocio` FROM `favoritos` AS `F` where `F`.`id_usuario` = "
+                   + Application.Current.Properties[key: "id"].ToString() + " and `F`.`id_negocio` = " + _id;
+
+            var _result = await Task.Run<String>(() => { return SQL.queryResult(query); });
+
+			if (_result != "NULL")
+			{
+				fav.Image = "corazon_morado";
+				isFavoito = true;
+			}
+			else
+			{
+				fav.Image = "corazon";
+				isFavoito = false;
+			}
+			
+		}
 
         private void setStar(int reiting)
         {
@@ -69,6 +93,39 @@ namespace PuroMexicano.FormsScreen
         {
             await Navigation.PushAsync(new negociosCat(int.Parse(_id)));
         }
+
+		async void addFavorito(object sender, System.EventArgs e)
+        {
+			if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
+            {
+				String query = "";
+				String msj = "Favorito ";
+				if(isFavoito)
+				{
+					query = "DELETE FROM `favoritos` where `id_usuario` = "
+                   + Application.Current.Properties[key: "id"].ToString() + " and `id_negocio` = " + _id;
+					msj += " eliminado";
+					fav.Image = "corazon";
+
+				}
+				else
+				{
+					query = "INSERT INTO `favoritos`(`id_usuario`, `id_negocio`) VALUES (" + Application.Current.Properties[key: "id"].ToString() + ", " + _id + ")";
+					msj += " agregado";
+					fav.Image = "corazon_morado";
+				}
+				isFavoito = !isFavoito;
+				await Task.Run<String>(() => { return SQL.queryResult(query); });
+				globales.success(msj);
+
+            }
+            else
+            {
+                globales.success("Es necesario iniciar sesión");
+            }
+        }
+
+
 
         private async void iniImage()
         {
