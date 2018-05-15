@@ -30,6 +30,18 @@ namespace PuroMexicano
         async void sinRegistro(object sender, System.EventArgs e)
         {
             globales.ToastInfo("login sin perfil");
+			Application.Current.Properties[key: "id"] =
+			Application.Current.Properties[key: "nombre"] =
+			Application.Current.Properties[key: "email"] =
+			Application.Current.Properties[key: "password"] =
+			Application.Current.Properties[key: "fecha_nacimiento"] =
+			Application.Current.Properties[key: "status"] =
+			Application.Current.Properties[key: "foto"] =
+			Application.Current.Properties[key: "edad"] =
+			Application.Current.Properties[key: "notificaciones"] = "";
+			Application.Current.Properties[key: "Sesion"] = false; 
+         
+			Application.Current.MainPage = new NavigationPage(new PuroMexicano.FormsScreen.Menu());
         }
     }
 }

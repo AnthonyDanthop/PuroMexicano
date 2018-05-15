@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using PuroMexicano.Clases;
 using Xamarin.Forms;
+using Rg.Plugins.Popup.Extensions;
+using PuroMexicano.FormsScreen.popUp;
 
 namespace PuroMexicano.FormsScreen
 {
@@ -35,7 +37,17 @@ namespace PuroMexicano.FormsScreen
 
         async void onValidate(object sender, System.EventArgs e)
         {
-            await Navigation.PushAsync(new validaPromo(_id, n.codigo));
+			if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
+            {
+				await Navigation.PushAsync(new validaPromo(_id, n.codigo));
+            }
+            else
+            {
+                popUpLogin popUpLogin = new popUpLogin();
+                await Navigation.PushPopupAsync(popUpLogin);
+
+            }
+            
         }
        
     }

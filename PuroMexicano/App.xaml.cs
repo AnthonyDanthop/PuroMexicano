@@ -9,7 +9,7 @@ namespace PuroMexicano
         public App()
         {
             InitializeComponent();
-			MainPage = new NavigationPage(new PuroMexicanoPage());
+			//MainPage = new NavigationPage(new PuroMexicanoPage());
             
 			try
 			{

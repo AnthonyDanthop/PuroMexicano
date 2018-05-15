@@ -98,7 +98,7 @@
                             Grid.Column = "0"
                             Margin = "-5,-10"
                             Image = "alcancia"
-                            ContentLayout = "Left, 30"
+                            ContentLayout = "Left, 35"
                             > 
                            </Button>
                     <Button Text = "OBTENER PUNTOS" 

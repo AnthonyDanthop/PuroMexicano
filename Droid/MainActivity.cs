@@ -25,6 +25,7 @@ namespace PuroMexicano.Droid
             UserDialogs.Init(this);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             ImageCircleRenderer.Init();
+			Rg.Plugins.Popup.Popup.Init(this, bundle);
             LoadApplication(new App());
         }
 

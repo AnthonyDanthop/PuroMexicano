@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using PuroMexicano.Clases;
+using PuroMexicano.FormsScreen.popUp;
+using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
 
 namespace PuroMexicano.FormsScreen
@@ -25,6 +27,7 @@ namespace PuroMexicano.FormsScreen
                 iFoto.Source = (Application.Current.Properties[key: "foto"].ToString() != "") ? (Application.Current.Properties[key: "foto"].ToString()) : ("puromex");
 
             }
+
 		}
 
         async void configPerfil(object sender, System.EventArgs e)
@@ -32,6 +35,12 @@ namespace PuroMexicano.FormsScreen
             if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
             {
                 await Navigation.PushAsync(new ConfigPerfil());
+            }
+			else
+            {
+                popUpLogin popUpLogin = new popUpLogin();
+                await Navigation.PushPopupAsync(popUpLogin);
+
             }
         }
 
@@ -44,6 +53,12 @@ namespace PuroMexicano.FormsScreen
 				//Application.Current.MainPage = new NavigationPage(new PuroMexicanoPage());
 				await Navigation.PushAsync(new PuroMexicanoPage());
 			}
+			else
+            {
+                popUpLogin popUpLogin = new popUpLogin();
+                await Navigation.PushPopupAsync(popUpLogin);
+
+            }
 		}
 
 
@@ -52,6 +67,12 @@ namespace PuroMexicano.FormsScreen
             if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
             {
                 await Navigation.PushAsync(new misPuntos());
+            }
+			else
+            {
+                popUpLogin popUpLogin = new popUpLogin();
+				await Navigation.PushPopupAsync(popUpLogin);
+
             }
         }
 
@@ -62,15 +83,18 @@ namespace PuroMexicano.FormsScreen
 				
 					await Navigation.PushAsync(new negociosCat());
 					
+			}else
+            {
+                popUpLogin popUpLogin = new popUpLogin();
+                await Navigation.PushPopupAsync(popUpLogin);
+
             }
         }
 
 		async void miNegocio_Click(object sender, System.EventArgs e)
         {
-            if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
-            {
-                await Navigation.PushAsync(new miNegocio());
-            }
+            await Navigation.PushAsync(new miNegocio());
+            
         }
 
         async void obtenerPuntos_Click(object sender, System.EventArgs e)
@@ -78,6 +102,12 @@ namespace PuroMexicano.FormsScreen
             if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
             {
                 await Navigation.PushAsync(new obtenerPuntos());
+            }
+			else
+            {
+                popUpLogin popUpLogin = new popUpLogin();
+                await Navigation.PushPopupAsync(popUpLogin);
+
             }
         }
     }

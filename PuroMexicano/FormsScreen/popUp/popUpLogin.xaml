@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage  xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="PuroMexicano.FormsScreen.popUp.popUpLogin">
+  <pages:PopupPage.Resources>
+     <ResourceDictionary>
+      <Style x:Key="EntryStyle" TargetType="Entry">
+        <Setter Property="PlaceholderColor" Value="#9cdaf1"/>
+        <Setter Property="TextColor" Value="#7dbbe6"/>
+      </Style>
+    </ResourceDictionary>
+  </pages:PopupPage.Resources>
+  <pages:PopupPage.Animation>
+    <animations:ScaleAnimation
+      PositionIn="Bottom"
+      PositionOut="Center"
+      ScaleIn="1"
+      ScaleOut="0.7"
+      DurationIn="700"
+      EasingIn="BounceOut"/>
+  </pages:PopupPage.Animation>
+  <ScrollView
+    HorizontalOptions="Center"
+    VerticalOptions="Center">
+    <AbsoluteLayout>
+      <Frame
+        x:Name="FrameContainer"
+        Margin="35"
+        HorizontalOptions="Center"
+        BackgroundColor="White">
+        <StackLayout
+            Padding = "0"
+            IsClippedToBounds="True"
+
+            >
+            <Label
+              HorizontalOptions="Center"
+              HorizontalTextAlignment="Center"
+              FontSize= "Large"
+              TextColor="#6E6E6E"
+              x:Name="errorCorreo"
+              Text="INICIAR SESIÓN"
+              Margin = "0,20" />
+            <Image Source = "barra_inferior" HorizontalOptions = "FillAndExpand"></Image>
+            <Label Text = "Para acceder a esta función es necesario registrarse o iniciar sesión"
+                   TextColor="#6E6E6E"
+                   Margin = "5,25"
+                   ></Label> 
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions> 
+
+                <Button TextColor = "White" Text = "ACEPTAR" Grid.Row = "0" Grid.Column = "1" BackgroundColor = "#952180"></Button>
+                <Button TextColor = "#9A9A9A" BackgroundColor = "White" BorderColor = "Gray" BorderWidth = ".5" Text = "CANCELAR" Clicked = "close" Grid.Row = "0" Grid.Column = "0" ></Button>
+            </Grid>
+        </StackLayout>
+      </Frame>
+    </AbsoluteLayout>
+  </ScrollView>
+</pages:PopupPage>

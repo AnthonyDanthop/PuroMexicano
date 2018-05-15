@@ -40,7 +40,7 @@
                         Grid.Column = "1">
                     </Image>
                     <Label x:Name = "lpuntos"
-                           Text = "250 puntos"
+                           Text = "0 puntos"
                            TextColor = "Gray"
                            VerticalOptions = "Center"
                            FontSize = "16"

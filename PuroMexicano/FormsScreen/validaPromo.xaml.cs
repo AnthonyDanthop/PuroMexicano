@@ -24,26 +24,38 @@ namespace PuroMexicano.FormsScreen
 
         private async void loadCalif()
         {
+			
             puntaje = new int[5];
             var result = await Task.Run<String>(() => { return SQL.calificaPromocion(_idPromo, null, true); });
+			if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
+			{
 
-            if (result != "none" && result != "Fail")
-            {
-                CalificacionPromo promo = JsonConvert.DeserializeObject<CalificacionPromo>(result);
-                setStar("0" + promo.limpieza);
-                setStar("1" + promo.servicioCliente);
-                setStar("2" + promo.rapidez);
-                setStar("3" + promo.calidad);
-                setStar("4" + promo.precio);
-            }
-            else
-            {
-                setStar("05");
+				if (result != "none" && result != "Fail")
+				{
+					CalificacionPromo promo = JsonConvert.DeserializeObject<CalificacionPromo>(result);
+					setStar("0" + promo.limpieza);
+					setStar("1" + promo.servicioCliente);
+					setStar("2" + promo.rapidez);
+					setStar("3" + promo.calidad);
+					setStar("4" + promo.precio);
+				}
+				else
+				{
+					setStar("05");
+					setStar("15");
+					setStar("25");
+					setStar("35");
+					setStar("45");
+				}
+			}
+			else{
+				setStar("05");
                 setStar("15");
                 setStar("25");
                 setStar("35");
                 setStar("45");
-            }
+			}
+
         }
 
         async void setCalif(object sender, System.EventArgs e)
@@ -54,9 +66,10 @@ namespace PuroMexicano.FormsScreen
         }
                
         async void updateCalif(object sender, System.EventArgs e)
-        {
-            var result = await Task.Run<String>(() => { return SQL.calificaPromocion(_idPromo, puntaje); });
-            if(result == "done")
+        {         
+			var result = await Task.Run<String>(() => { return SQL.calificaPromocion(_idPromo, puntaje); });
+
+            if (result == "done")
             {
                 globales.ToastInfo("Gracias por tu puntuación");
                 this.Navigation.RemovePage(this.Navigation.NavigationStack[this.Navigation.NavigationStack.Count - 1]);
@@ -64,6 +77,7 @@ namespace PuroMexicano.FormsScreen
 
                 await Navigation.PopAsync();
             }
+            
         }
 
         private void setStar(string seccion)

@@ -17,9 +17,7 @@
                 <StackLayout Spacing="2" 
                          x:Name="layout_Log"
                          VerticalOptions = "Center"
-                         HorizontalOptions = "Center"
-                         >
-                    
+                         HorizontalOptions = "Center">
                 </StackLayout>
             </StackLayout>
       </ScrollView>

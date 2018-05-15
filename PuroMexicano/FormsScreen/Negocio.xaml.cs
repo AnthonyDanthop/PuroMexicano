@@ -5,6 +5,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NodaTime;
 using PuroMexicano.Clases;
+using PuroMexicano.FormsScreen.popUp;
+using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
 
 namespace PuroMexicano.FormsScreen
@@ -25,7 +27,8 @@ namespace PuroMexicano.FormsScreen
             lDesc.Text = n.descripcion;
             lHorario.Text = n.horario;
             this.setStar(int.Parse(n.rating));
-			this.Favorito();
+			if (bool.Parse(Application.Current.Properties[key: "Sesion"].ToString()))
+    			this.Favorito();
         }
 
         private async void Favorito()
@@ -119,9 +122,11 @@ namespace PuroMexicano.FormsScreen
 				globales.success(msj);
 
             }
-            else
+			else
             {
-                globales.success("Es necesario iniciar sesión");
+                popUpLogin popUpLogin = new popUpLogin();
+                await Navigation.PushPopupAsync(popUpLogin);
+
             }
         }
 

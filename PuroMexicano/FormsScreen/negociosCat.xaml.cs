@@ -61,7 +61,6 @@ namespace PuroMexicano.FormsScreen
 
 		public async void loadFavoritos()
         {
-            //var _result = await Task.Run<String>(() => { return SQL.getNegocios(id); });
 			string query = "SELECT * FROM `negocio` WHERE `id` in (SELECT `id_negocio` from `favoritos` where `id_usuario` =  "
                     + Application.Current.Properties[key: "id"].ToString() + ");";
 
@@ -109,66 +108,60 @@ namespace PuroMexicano.FormsScreen
 					grid.Children.Add(name, 0, 0);
 					grid.Children.Add(button, 0, 0);
 
-
-
-					layout_Log.Children.Add(grid);
-
+                    layout_Log.Children.Add(grid);
 				}
 			}
 			else
-				globales.success("Aún no agregas favoritos");
-
+				globales.success("Aún no agregas favoritos");         
         }
-
-
+       
         public async void loadNegocios()
         {
             string id = getValue();
             var _result = await Task.Run<String>(() => { return SQL.getNegocios(id); }); 
             if(_result != "null")
             {
-                foreach(negocio it in globales.lnegocios)
-                {
-                    
-                    Grid grid = new Grid
-                    {
-
-                    };
-                    grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1f, GridUnitType.Auto) });
-                    grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Auto) });
-
-					Button button = new Button
+					foreach (negocio it in globales.lnegocios)
 					{
-						Text = "",
-						Font = Font.SystemFontOfSize(NamedSize.Large),
-						BorderWidth = 1,
-						HorizontalOptions = LayoutOptions.FillAndExpand,
-						VerticalOptions = LayoutOptions.CenterAndExpand,
-						ClassId = it.Id,
-						Image = this.getImage(),
-                        HeightRequest = 50,
 
-                        BackgroundColor = Color.Transparent
-                    };
-                    button.Clicked += onClicked; 
+						Grid grid = new Grid
+						{
 
-                    Label name = new Label
-                    {
-                        Text = it.Nombre,
-                        TextColor = Color.Gray,
-                        FontSize = 18f,
-                        HorizontalOptions = LayoutOptions.Start,
-                        VerticalOptions = LayoutOptions.Center,
-                        VerticalTextAlignment = TextAlignment.Center,
-                        Margin = new Thickness(10, 0)
-                    };              
+						};
+						grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1f, GridUnitType.Auto) });
+						grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1f, GridUnitType.Auto) });
 
-					grid.Children.Add(name, 0, 0);
-                    grid.Children.Add(button, 0, 0);
-                                          
-                    layout_Log.Children.Add(grid);
-                    
-                }
+						Button button = new Button
+						{
+							Text = "",
+							Font = Font.SystemFontOfSize(NamedSize.Large),
+							BorderWidth = 1,
+							HorizontalOptions = LayoutOptions.FillAndExpand,
+							VerticalOptions = LayoutOptions.CenterAndExpand,
+							ClassId = it.Id,
+							Image = this.getImage(),
+							HeightRequest = 50,
+
+							BackgroundColor = Color.Transparent
+						};
+						button.Clicked += onClicked;
+
+						Label name = new Label
+						{
+							Text = it.Nombre,
+							TextColor = Color.Gray,
+							FontSize = 18f,
+							HorizontalOptions = LayoutOptions.Start,
+							VerticalOptions = LayoutOptions.Center,
+							VerticalTextAlignment = TextAlignment.Center,
+							Margin = new Thickness(10, 0)
+						};
+
+						grid.Children.Add(name, 0, 0);
+						grid.Children.Add(button, 0, 0);
+
+						layout_Log.Children.Add(grid);               
+				}
             }
 
         }
@@ -254,8 +247,7 @@ namespace PuroMexicano.FormsScreen
             Button button = (Button)sender;
             await Navigation.PushAsync(new Promocion(button.ClassId));
         }
-
-       
+              
         private String getValue()
         {
             String res = "";
